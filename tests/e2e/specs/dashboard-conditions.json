@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "dashboard-conditions",
+    "kind": "interactive",
+    "goal": "See live sea and weather conditions, forecasts, charts and UV advice on the dashboard, and switch the interface to Persian and back",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the dashboard",
+      "Switch the language to Persian",
+      "Switch the language back to English"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Marjan Beach"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Current conditions"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Water temp"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "UV index"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Sunrise"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "7-day forecast"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "دریای کیش"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Kish Sea Watch"
+      }
+    ]
+  }
+}

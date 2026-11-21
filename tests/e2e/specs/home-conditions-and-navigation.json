@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "home-conditions-and-navigation",
+    "kind": "interactive",
+    "goal": "Open the homepage, see the tropical hero with current sea conditions, switch beach, and reach the map and comparison views",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the homepage",
+      "Select Simorgh Beach from the beach switcher",
+      "Open the Map page",
+      "Open the Compare page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Kish Sea Watch"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Marjan Beach"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Simorgh Beach"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Kish Island"
+      },
+      {
+        "afterStep": 3,
+        "expectText": "Swimming"
+      }
+    ]
+  }
+}

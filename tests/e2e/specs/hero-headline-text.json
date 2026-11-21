@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "hero-headline-text",
+    "kind": "interactive",
+    "goal": "The homepage hero shows the new headline text and the rest of the page still renders",
+    "requirementIndexes": [
+      0
+    ],
+    "acceptanceCriteriaIndexes": [
+      0,
+      1
+    ],
+    "steps": [
+      "Open the homepage"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Let's Go Swim"
+      },
+      {
+        "afterStep": 0,
+        "expectNoText": "Neon Tides, Real Numbers"
+      }
+    ]
+  }
+}

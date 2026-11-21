@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "beach-comparison",
+    "kind": "interactive",
+    "goal": "Compare all four beaches for each activity with a status and written reason",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the comparison page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Swimming"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Fishing"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Kayaking"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Paddleboarding"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Simorgh Beach"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Fisherman Beach Park"
+      }
+    ]
+  }
+}

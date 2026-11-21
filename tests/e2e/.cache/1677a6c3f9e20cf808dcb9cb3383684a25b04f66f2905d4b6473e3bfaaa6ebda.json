@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:34:39.216Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Compare\"",
+        "target": {
+          "role": "link",
+          "name": "Compare"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "home-conditions-and-navigation.e2e.ts::home-conditions-and-navigation",
+      "targetId": "web",
+      "instructionDigest": "e908e51d343e4cf546567b3e3e636a106ee8af1ce560db82cbba82709f1db488",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the \"Compare\" nav link; the app navigated to /compare (Compare link focused, main area rendering compare content).",
+    "startPath": "/map",
+    "endPath": "/compare",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Beach comparison"
+      },
+      {
+        "text": "Ranked by activity using the same live forecast for every beach."
+      },
+      {
+        "text": "Forecast estimate."
+      },
+      {
+        "role": "heading",
+        "name": "Best beach per activity"
+      },
+      {
+        "text": "Swimming"
+      },
+      {
+        "text": "No data"
+      },
+      {
+        "text": "Fishing"
+      },
+      {
+        "text": "Surfing & water sports"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Kish Island map"
+      },
+      {
+        "text": "Monitored beaches with their current conditions."
+      },
+      {
+        "text": "Kish Island, Iran"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park"
+      },
+      {
+        "role": "button",
+        "name": "Fisherman Beach Park"
+      },
+      {
+        "text": "Map legend"
+      }
+    ],
+    "endWaitMs": 10725,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:12:00.801Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"فارسی\" in \"EN\"",
+        "target": {
+          "role": "button",
+          "name": "فارسی",
+          "within": "EN"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "dashboard-conditions.e2e.ts::dashboard-conditions",
+      "targetId": "web",
+      "instructionDigest": "d48f71eacaec6e68cfa84affaf4f7beca91dffbbdf62ceef77a9d3257841c77f",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the \"فارسی\" language button; the dashboard switched to Persian (e.g. \"داشبورد\", \"شرایط کنونی\", \"پیش‌بینی ۷ روزه\", \"ساحل مرجان\") and فارسی now shows as pressed.",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "text": "دیده‌بان دریای کیش"
+      },
+      {
+        "text": "شرایط دریا و ساحل"
+      },
+      {
+        "text": "داشبورد"
+      },
+      {
+        "text": "مقایسه"
+      },
+      {
+        "text": "نقشه"
+      },
+      {
+        "text": "گزارش‌ها"
+      },
+      {
+        "text": "مدیریت"
+      },
+      {
+        "role": "button",
+        "name": "EN"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Kish Sea Watch"
+      },
+      {
+        "text": "Marine & beach conditions"
+      },
+      {
+        "text": "Dashboard"
+      },
+      {
+        "text": "Compare"
+      },
+      {
+        "text": "Map"
+      },
+      {
+        "text": "Reports"
+      },
+      {
+        "text": "Admin"
+      },
+      {
+        "role": "button",
+        "name": "EN",
+        "states": [
+          "pressed"
+        ]
+      }
+    ],
+    "endWaitMs": 11357,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "community-report",
+    "kind": "interactive",
+    "goal": "A signed-in visitor submits a community report and sees it labelled Unverified",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Sign in",
+      "Open the community reports page",
+      "Submit a report of jellyfish at Marjan Beach with the note Jellyfish near the shore"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Kish Sea Watch"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Community reports"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Jellyfish near the shore"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Unverified"
+      }
+    ]
+  }
+}

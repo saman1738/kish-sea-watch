@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "island-map",
+    "kind": "interactive",
+    "goal": "Open the island map and reveal a beach's current conditions from its marker",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the map page",
+      "Select the Mir Mahna Coastal Park marker"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Mir Mahna Coastal Park"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Mir Mahna Coastal Park"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Water temp"
+      }
+    ]
+  }
+}

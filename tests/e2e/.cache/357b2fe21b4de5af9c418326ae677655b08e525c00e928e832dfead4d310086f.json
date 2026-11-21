@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:10:27.915Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Mir Mahna Coastal Park\"",
+        "target": {
+          "role": "button",
+          "name": "Mir Mahna Coastal Park"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "island-map.e2e.ts::island-map",
+      "targetId": "web",
+      "instructionDigest": "794c8b7fcc1c181b3893657723f957dd4a464710861b759301a5a15e9d0d4ac1",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the \"Mir Mahna Coastal Park\" marker on the Kish Island map. A detail panel opened for Mir Mahna Coastal Park (26.5500° · 53.9700°) showing Insufficient data, wind 13 km/h W, UV 0.7, and a \"View beach\" link to /beaches/2.",
+    "startPath": "/map",
+    "endPath": "/map",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "text": "Beach"
+      },
+      {
+        "role": "heading",
+        "name": "Mir Mahna Coastal Park"
+      },
+      {
+        "text": "26.5500° · 53.9700°"
+      },
+      {
+        "role": "button",
+        "name": "Close"
+      },
+      {
+        "text": "Water temp"
+      },
+      {
+        "text": "No data"
+      },
+      {
+        "text": "°C"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park"
+      },
+      {
+        "text": "Open beach details"
+      },
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park 26.550°, 53.970°"
+      }
+    ],
+    "endWaitMs": 11105,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

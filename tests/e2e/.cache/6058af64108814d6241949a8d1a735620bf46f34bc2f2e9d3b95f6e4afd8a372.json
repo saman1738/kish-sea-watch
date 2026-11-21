@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:34:39.213Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Simorgh Beach\" in \"Kish Island · Persian Gulf\"",
+        "target": {
+          "role": "button",
+          "name": "Simorgh Beach",
+          "within": "Kish Island · Persian Gulf"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "home-conditions-and-navigation.e2e.ts::home-conditions-and-navigation",
+      "targetId": "web",
+      "instructionDigest": "1afd57928e25e84aee038c74942aad3896b78003daeba932e8adca37d333b0bc",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped \"Simorgh Beach\" in the beach switcher; it is now the pressed/selected beach (26.5333° · 54.0200°) and the dashboard shows Simorgh Beach conditions (e.g. \"Not enough live data to estimate suitability. Simorgh Beach.\").",
+    "startPath": "/",
+    "endPath": "/",
+    "endAnchors": [
+      {
+        "text": "Simorgh Beach"
+      },
+      {
+        "text": "26.5333° · 54.0200°"
+      },
+      {
+        "text": "Insufficient data"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "text": "km/h"
+      },
+      {
+        "text": "W"
+      },
+      {
+        "text": "0.1"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Marjan Beach"
+      },
+      {
+        "text": "26.5233° · 53.9800°"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "text": "Loading conditions…"
+      }
+    ],
+    "endWaitMs": 11699,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

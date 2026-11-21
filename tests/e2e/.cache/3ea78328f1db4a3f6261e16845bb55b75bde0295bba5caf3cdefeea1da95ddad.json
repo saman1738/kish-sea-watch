@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:10:50.063Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Admin\"",
+        "target": {
+          "role": "link",
+          "name": "Admin"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Sign in with Internet Identity\"",
+        "target": {
+          "role": "button",
+          "name": "Sign in with Internet Identity"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "community-report.e2e.ts::community-report",
+      "targetId": "web",
+      "instructionDigest": "b128cd25fb53b4cf59f84e24c3572fc2e570a5b5f89c480c0397527dd84483c5",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Signed in via \"Sign in with Internet Identity\" on /admin; the Internet Identity window completed and the Admin console now shows the Beaches/Reports/Warnings tabs with the beach list, confirming a signed-in session.",
+    "startPath": "/",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Admin console"
+      },
+      {
+        "text": "Manage beaches, review reports and publish official warnings."
+      },
+      {
+        "role": "tab",
+        "name": "Beaches",
+        "states": [
+          "selected"
+        ]
+      },
+      {
+        "role": "tab",
+        "name": "Reports"
+      },
+      {
+        "role": "tab",
+        "name": "Warnings"
+      },
+      {
+        "role": "heading",
+        "name": "Beaches"
+      },
+      {
+        "role": "button",
+        "name": "Add beach"
+      },
+      {
+        "text": "Marjan Beach"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Kish Island, Iran"
+      },
+      {
+        "role": "heading",
+        "name": "Marjan Beach"
+      },
+      {
+        "text": "Live marine and weather readings for monitored beaches."
+      },
+      {
+        "text": "· Asia/Tehran"
+      },
+      {
+        "text": "Refresh"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park"
+      }
+    ],
+    "endWaitMs": 30000,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "recordedEndPath": "/admin"
+}

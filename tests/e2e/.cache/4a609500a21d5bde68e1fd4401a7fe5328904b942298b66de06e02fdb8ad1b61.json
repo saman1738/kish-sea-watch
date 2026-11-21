@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:10:50.067Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap combobox \"Beach\"",
+        "target": {
+          "role": "combobox",
+          "name": "Beach"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap option \"Marjan Beach\"",
+        "target": {
+          "role": "option",
+          "name": "Marjan Beach"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap combobox \"Observation\"",
+        "target": {
+          "role": "combobox",
+          "name": "Observation"
+        }
+      },
+      {
+        "name": "tap",
+        "summary": "tap option \"Jellyfish\"",
+        "target": {
+          "role": "option",
+          "name": "Jellyfish"
+        }
+      },
+      {
+        "name": "type",
+        "summary": "type \"Jellyfish near the shore\" into textbox \"Details (optional)\"",
+        "target": {
+          "role": "textbox",
+          "name": "Details (optional)",
+          "placeholder": "What did you notice? Time, location on the beach, anything useful."
+        },
+        "value": "Jellyfish near the shore"
+      },
+      {
+        "name": "tap",
+        "summary": "tap button \"Submit report\"",
+        "target": {
+          "role": "button",
+          "name": "Submit report"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "community-report.e2e.ts::community-report",
+      "targetId": "web",
+      "instructionDigest": "896cd32f64b853fb84e2595ccde42edf8565fcbc6e4ea75021f0e012c2bcbeb7",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Submitted a community report: Beach = Marjan Beach, Observation = Jellyfish, Details = \"Jellyfish near the shore\". The page showed \"Report submitted. Thank you.\" and the Recent community reports list now shows \"Jellyfish Marjan Beach Nov 21, 16:40 Unverified Jellyfish near the shore\" (count 1).",
+    "startPath": "/reports",
+    "endPath": "/reports",
+    "endAnchors": [
+      {
+        "text": "Jellyfish"
+      },
+      {
+        "text": "Marjan Beach"
+      },
+      {
+        "text": "Unverified"
+      },
+      {
+        "text": "Jellyfish near the shore"
+      },
+      {
+        "text": "Report submitted. Thank you."
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "No community reports yet."
+      },
+      {
+        "text": "Be the first to share conditions at a Kish beach."
+      },
+      {
+        "text": "Select beach"
+      },
+      {
+        "text": "Rough water"
+      }
+    ],
+    "endWaitMs": 11356,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

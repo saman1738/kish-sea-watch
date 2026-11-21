@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:34:03.966Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Reports\"",
+        "target": {
+          "role": "link",
+          "name": "Reports"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "community-report.e2e.ts::community-report",
+      "targetId": "web",
+      "instructionDigest": "ed819e9a7c569582083be74411acf209b4503f0f67086b097625ad3a40f410a9",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the \"Reports\" nav link; the app is now on /reports showing the \"Community reports\" page with the report feed (0 reports, \"No community reports yet.\") and the \"Submit a report\" form. The community reports page is open.",
+    "startPath": "/admin",
+    "endPath": "/reports",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Community reports"
+      },
+      {
+        "text": "Unverified observations submitted by beachgoers."
+      },
+      {
+        "role": "heading",
+        "name": "Report feed"
+      },
+      {
+        "role": "button",
+        "name": "All beaches",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park"
+      },
+      {
+        "role": "button",
+        "name": "Fisherman Beach Park"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Admin console"
+      },
+      {
+        "text": "Manage beaches, review reports and publish official warnings."
+      },
+      {
+        "role": "tab",
+        "name": "Beaches",
+        "states": [
+          "selected"
+        ]
+      },
+      {
+        "role": "tab",
+        "name": "Reports"
+      },
+      {
+        "role": "tab",
+        "name": "Warnings"
+      },
+      {
+        "role": "heading",
+        "name": "Beaches"
+      },
+      {
+        "role": "button",
+        "name": "Add beach"
+      },
+      {
+        "text": "Marjan Beach"
+      }
+    ],
+    "endWaitMs": 10166,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

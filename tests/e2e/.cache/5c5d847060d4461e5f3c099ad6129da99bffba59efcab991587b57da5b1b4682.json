@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:34:39.215Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Map\"",
+        "target": {
+          "role": "link",
+          "name": "Map"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "home-conditions-and-navigation.e2e.ts::home-conditions-and-navigation",
+      "targetId": "web",
+      "instructionDigest": "59c5277dd5dcc70b9033741db3b050e86366e9311884d85a74c2a568162825d2",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the \"Map\" nav link; the app navigated to /map, showing the map page (main area with map boxes, nav Map link focused).",
+    "startPath": "/",
+    "endPath": "/map",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Kish Island map"
+      },
+      {
+        "text": "Monitored beaches with their current conditions."
+      },
+      {
+        "text": "Kish Island, Iran"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "text": "Map legend"
+      },
+      {
+        "text": "Favorable"
+      },
+      {
+        "text": "Caution"
+      },
+      {
+        "text": "Unfavorable"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Kish Island · Persian Gulf"
+      },
+      {
+        "role": "heading",
+        "name": "Neon tides, real numbers"
+      },
+      {
+        "text": "Live water temperature, waves, wind and UV for every monitored Kish beach — read the sea before you step in."
+      },
+      {
+        "role": "link",
+        "name": "View the map"
+      },
+      {
+        "text": "26.5333° · 54.0200°"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "text": "Right now on the island"
+      },
+      {
+        "text": "Water temp"
+      }
+    ],
+    "endWaitMs": 11043,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "community-reports-feed",
+    "kind": "interactive",
+    "goal": "Open the community reports page and see the report feed with its beach filter",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the homepage",
+      "Open the Reports page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Kish Sea Watch"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Marjan Beach"
+      }
+    ]
+  }
+}

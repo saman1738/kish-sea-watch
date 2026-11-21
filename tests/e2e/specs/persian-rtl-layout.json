@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "persian-rtl-layout",
+    "kind": "interactive",
+    "goal": "Switch the interface to Persian and confirm the right-to-left layout still shows the homepage content",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the homepage",
+      "Switch the language to Persian"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Kish Sea Watch"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "دیده‌بان دریای کیش"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "ساحل مرجان"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "شرایط کنونی"
+      }
+    ]
+  }
+}

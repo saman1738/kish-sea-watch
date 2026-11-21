@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:34:58.271Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Reports\"",
+        "target": {
+          "role": "link",
+          "name": "Reports"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "community-reports-feed.e2e.ts::community-reports-feed",
+      "targetId": "web",
+      "instructionDigest": "dc5fe1cd9da6dbf7bb0fe5efd5916efd71cf149ad38db1d2512f4da133828554",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the Reports link in the nav; the app navigated to /reports showing the \"Community reports\" page with the Report feed (0 reports, beach filter buttons) and a \"Submit a report\" panel.",
+    "startPath": "/",
+    "endPath": "/reports",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Community reports"
+      },
+      {
+        "text": "Unverified observations submitted by beachgoers."
+      },
+      {
+        "role": "heading",
+        "name": "Report feed"
+      },
+      {
+        "role": "button",
+        "name": "All beaches",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park"
+      },
+      {
+        "role": "button",
+        "name": "Fisherman Beach Park"
+      }
+    ],
+    "endWaitMs": 11303,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

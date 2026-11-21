@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T13:34:29.351Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Compare\"",
+        "target": {
+          "role": "link",
+          "name": "Compare"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "beach-comparison.e2e.ts::beach-comparison",
+      "targetId": "web",
+      "instructionDigest": "71ba3ee1bec8be10bbb086bad9a0573ccfdfeeda38087224e33492caa60d2ec2",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the \"Compare\" link; the app navigated to /compare and shows the \"Beach comparison\" page with best-beach-per-activity list and per-beach activity comparison cards (Marjan, Simorgh, Mir Mahna, Fisherman Beach Park).",
+    "startPath": "/",
+    "endPath": "/compare",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Beach comparison"
+      },
+      {
+        "text": "Ranked by activity using the same live forecast for every beach."
+      },
+      {
+        "text": "Forecast estimate."
+      },
+      {
+        "role": "heading",
+        "name": "Best beach per activity"
+      },
+      {
+        "text": "Swimming"
+      },
+      {
+        "text": "Fishing"
+      },
+      {
+        "text": "Surfing & water sports"
+      },
+      {
+        "text": "Kayaking & paddleboarding"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Kish Island · Persian Gulf"
+      },
+      {
+        "role": "heading",
+        "name": "Neon tides, real numbers"
+      },
+      {
+        "text": "Live water temperature, waves, wind and UV for every monitored Kish beach — read the sea before you step in."
+      },
+      {
+        "role": "link",
+        "name": "View the map"
+      },
+      {
+        "text": "Marjan Beach"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park"
+      }
+    ],
+    "endWaitMs": 10192,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

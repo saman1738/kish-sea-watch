@@ -1,0 +1,152 @@
+// Version: 4.0.0
+type AccessControlState__204832294 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__175655829<Principal, UserRole__256279894>
+  };
+type BeachId__731308148 = Nat;
+type BeachId__915544102 = Nat;
+type Beach__1002979543 =
+  {
+    active : Bool;
+    descriptionEn : Text;
+    descriptionFa : Text;
+    id : BeachId__915544102;
+    latitude : Float;
+    longitude : Float;
+    nameEn : Text;
+    nameFa : Text
+  };
+type Beach__310548943 =
+  {
+    active : Bool;
+    descriptionEn : Text;
+    descriptionFa : Text;
+    id : BeachId__731308148;
+    latitude : Float;
+    longitude : Float;
+    nameEn : Text;
+    nameFa : Text
+  };
+type Data__1061330525<K, V> =
+  {var count : Nat__565224867; kvs : [var ?(K, V)]};
+type Internal__1060388275<K, V> =
+  {children : [var ?Node__1010487028<K, V>]; data : Data__1061330525<K, V>};
+type Leaf__8515789<K, V> = {data : Data__1061330525<K, V>};
+type Map__175655829<K, V> = Map__975833162<K, V>;
+type Map__925935234<K, V> =
+  {var root : Node__1010487028<K, V>; var size : Nat__565224867};
+type Map__975833162<K, V> = Map__925935234<K, V>;
+type Nat__565224867 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__769816496 =
+  {
+    accessControlState : AccessControlState__204832294;
+    beaches : Map__175655829<BeachId__915544102, Beach__1002979543>;
+    nextBeachId : {var value : Nat};
+    nextReportId : {var value : Nat};
+    nextWarningId : {var value : Nat};
+    reports : Map__175655829<ReportId__569381021, Report__556594439>;
+    warnings : Map__175655829<WarningId__1010592422, Warning__640614469>
+  };
+type Node__1010487028<K, V> =
+  {#internal : Internal__1060388275<K, V>; #leaf : Leaf__8515789<K, V>};
+type OldActor__512397517 = {};
+type ReportId__569381021 = Nat;
+type ReportId__757387501 = Nat;
+type ReportKind__519496805 =
+  {
+    #calmWater;
+    #jellyfish;
+    #otherHazard;
+    #roughWater;
+    #strongCurrents;
+    #unusualWaves;
+    #waterClarity
+  };
+type ReportKind__815949004 =
+  {
+    #calmWater;
+    #jellyfish;
+    #otherHazard;
+    #roughWater;
+    #strongCurrents;
+    #unusualWaves;
+    #waterClarity
+  };
+type Report__556594439 =
+  {
+    beachId : BeachId__915544102;
+    id : ReportId__569381021;
+    kind : ReportKind__815949004;
+    note : Text;
+    reviewedAt : ?Int;
+    status : ReviewStatus__556313692;
+    submittedAt : Int
+  };
+type Report__953667835 =
+  {
+    beachId : BeachId__731308148;
+    id : ReportId__757387501;
+    kind : ReportKind__519496805;
+    note : Text;
+    reviewedAt : ?Timestamp__301639476;
+    status : ReviewStatus__420242737;
+    submittedAt : Timestamp__301639476
+  };
+type ReviewStatus__420242737 = {#dismissed; #unverified; #verified};
+type ReviewStatus__556313692 = {#dismissed; #unverified; #verified};
+type Timestamp__301639476 = Int;
+type UserRole__256279894 = {#admin; #guest; #user};
+type WarningId__1010592422 = Nat;
+type WarningId__156956994 = Nat;
+type WarningSeverity__332883919 = {#advisory; #danger; #info; #warning};
+type WarningSeverity__830881981 = {#advisory; #danger; #info; #warning};
+type Warning__467078019 =
+  {
+    beachId : ?BeachId__731308148;
+    id : WarningId__156956994;
+    issuedAt : Timestamp__301639476;
+    messageEn : Text;
+    messageFa : Text;
+    published : Bool;
+    severity : WarningSeverity__830881981
+  };
+type Warning__640614469 =
+  {
+    beachId : ?BeachId__915544102;
+    id : WarningId__1010592422;
+    issuedAt : Int;
+    messageEn : Text;
+    messageFa : Text;
+    published : Bool;
+    severity : WarningSeverity__332883919
+  };
+{
+  "00000000_000000" : OldActor__512397517 -> NewActor__769816496
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__175655829<Principal, UserRole__256279894>
+    };
+  stable beaches :
+    {
+      var root : Node__1010487028<BeachId__731308148, Beach__310548943>;
+      var size : Nat__565224867
+    };
+  stable nextBeachId : {var value : Nat};
+  stable nextReportId : {var value : Nat};
+  stable nextWarningId : {var value : Nat};
+  stable reports :
+    {
+      var root : Node__1010487028<ReportId__757387501, Report__953667835>;
+      var size : Nat__565224867
+    };
+  stable warnings :
+    {
+      var root : Node__1010487028<WarningId__156956994, Warning__467078019>;
+      var size : Nat__565224867
+    }
+};

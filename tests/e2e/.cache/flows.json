@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "flows": {
+    "beach-comparison": {
+      "flowId": "beach-comparison",
+      "specDigest": "bd13a50bcb16f8b82b454aeb5550c05db8cb255b35d0442ab5e374e8fbdc049f",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:34:58.337Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "f2fbe4ced3d8ff0ea2222ecd652c62fc92a838432b81179a50a8077f683c4e6a.json"
+      ],
+      "ranAfter": [
+        "dashboard-conditions"
+      ],
+      "ranWith": [
+        "dashboard-conditions"
+      ],
+      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "visitedPaths": [
+        "/",
+        "/compare"
+      ],
+      "readOnly": true
+    },
+    "community-report": {
+      "flowId": "community-report",
+      "specDigest": "db5bb29037293dffc332bbe3cecf0b9a20b3a5bdaa1802041b6749039c9741d3",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:34:58.340Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "3ea78328f1db4a3f6261e16845bb55b75bde0295bba5caf3cdefeea1da95ddad.json",
+        "bb7b3e5b37ec9dad531188bf642e52eff94e1917931774c6ede673902c452915.json",
+        "4a609500a21d5bde68e1fd4401a7fe5328904b942298b66de06e02fdb8ad1b61.json"
+      ],
+      "ranAfter": [
+        "beach-comparison",
+        "dashboard-conditions",
+        "island-map"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "dashboard-conditions",
+        "island-map"
+      ],
+      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "visitedPaths": [
+        "/",
+        "/admin",
+        "/reports"
+      ]
+    },
+    "community-reports-feed": {
+      "flowId": "community-reports-feed",
+      "specDigest": "2f05365d1483ac7883ef4a2d95e0d5697f1269a256008f7736080ee24c49fed2",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:34:58.341Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "88c48d5d3c7a8a4d15dc4359b12a8e71cae9856c0643151cd966fbedaa64b89f.json"
+      ],
+      "ranAfter": [
+        "beach-comparison",
+        "community-report",
+        "dashboard-conditions",
+        "home-conditions-and-navigation",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "community-report",
+        "dashboard-conditions",
+        "home-conditions-and-navigation",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "visitedPaths": [
+        "/",
+        "/reports"
+      ],
+      "readOnly": true
+    },
+    "dashboard-conditions": {
+      "flowId": "dashboard-conditions",
+      "specDigest": "3a8e45de7cfcc9f2387a834a3f002db7526d15f88eef7fd71ab82eb6a43ef299",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:34:58.328Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "ccf8b4313f08828cb5747e162ebf98343cfbd762bbf4bf8906fa7caa4d47918a.json",
+        "5ca097bc89e6411cbbe0cff14bd5c2961b03f4efe304c9fc31973a2f464261f6.json",
+        "262acfe7638cbacdbfe41e93cc3fe2e27fb005a1a66d75704f42efb04febf4ad.json"
+      ],
+      "ranAfter": [],
+      "ranWith": [],
+      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "visitedPaths": [
+        "/"
+      ],
+      "readOnly": true
+    },
+    "hero-headline-text": {
+      "flowId": "hero-headline-text",
+      "specDigest": "1a5862d457ddcb4aa6904e1fe9029d5ddeca0557234f873ee28ff1d40206c01d",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:42:40.459Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [],
+      "ranAfter": [],
+      "ranWith": [],
+      "readOnly": true
+    },
+    "home-conditions-and-navigation": {
+      "flowId": "home-conditions-and-navigation",
+      "specDigest": "18c4fbe442d6525d2001641adfd98e5a82dd7a1aefca16c599abf1635301c89d",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:34:58.340Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "6058af64108814d6241949a8d1a735620bf46f34bc2f2e9d3b95f6e4afd8a372.json",
+        "5c5d847060d4461e5f3c099ad6129da99bffba59efcab991587b57da5b1b4682.json",
+        "1677a6c3f9e20cf808dcb9cb3383684a25b04f66f2905d4b6473e3bfaaa6ebda.json"
+      ],
+      "ranAfter": [
+        "beach-comparison",
+        "community-report",
+        "dashboard-conditions",
+        "island-map"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "community-report",
+        "dashboard-conditions",
+        "island-map"
+      ],
+      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "visitedPaths": [
+        "/",
+        "/map",
+        "/compare"
+      ],
+      "readOnly": true
+    },
+    "island-map": {
+      "flowId": "island-map",
+      "specDigest": "d802b58950cedb93ce81e5be51c5e2fe77f782d619e8b886884f8e7402eed9bc",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:12:44.882Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "1e4ec9418799a6b38e11b248194095c0ad317c8f921c3dfacdd5cb2e41389d88.json",
+        "357b2fe21b4de5af9c418326ae677655b08e525c00e928e832dfead4d310086f.json"
+      ],
+      "ranAfter": [
+        "beach-comparison",
+        "dashboard-conditions"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "dashboard-conditions"
+      ],
+      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "visitedPaths": [
+        "/",
+        "/map"
+      ],
+      "readOnly": true
+    },
+    "persian-rtl-layout": {
+      "flowId": "persian-rtl-layout",
+      "specDigest": "dded85f58858fbf474a4a7f47d4aab353e66af7fc51f8e70a1e7374ae9d2bf3e",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T13:36:17.982Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "8e1bbafde23dab5bf5e6a056b7730d711b488843bb8ad5de594ba368a173b408.json"
+      ],
+      "ranAfter": [
+        "beach-comparison",
+        "community-report",
+        "dashboard-conditions",
+        "home-conditions-and-navigation",
+        "island-map"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "community-report",
+        "dashboard-conditions",
+        "home-conditions-and-navigation",
+        "island-map"
+      ],
+      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "visitedPaths": [
+        "/"
+      ],
+      "readOnly": true
+    }
+  }
+}
