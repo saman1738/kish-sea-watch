@@ -25,7 +25,10 @@ export default defineConfig({
   },
 
   preview: {
-    allowedHosts: ["fi-hel03.altare.global"],
+    allowedHosts: [
+      "fi-hel03.altare.global",
+      "kish-sea-watch.go.altare.global",
+    ],
   },
 
   optimizeDeps: {
