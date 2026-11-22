@@ -1,3 +1,4 @@
+
 import { fileURLToPath, URL } from "url";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
@@ -12,19 +13,30 @@ process.env.II_URL = process.env.II_URL || ii_url;
 
 export default defineConfig({
   logLevel: "error",
+
   define: {
     global: "globalThis",
   },
+
   build: {
     emptyOutDir: true,
     sourcemap: false,
     minify: false,
   },
+
+  preview: {
+    allowedHosts: [
+      "fi-hel03.altare.global",
+      "kish-sea-watch.go.altare.global",
+    ],
+  },
+
   optimizeDeps: {
     rolldownOptions: {
       transform: { define: { global: "globalThis" } },
     },
   },
+
   server: {
     proxy: {
       "/api": {
@@ -33,26 +45,35 @@ export default defineConfig({
       },
     },
   },
+
   plugins: [
     environment("all", { prefix: "CANISTER_" }),
     environment("all", { prefix: "DFX_" }),
     environment({
       II_URL: process.env.II_URL,
-      II_CANISTER_ID: process.env.II_CANISTER_ID || (new URL(process.env.II_URL || "https://id.ai").hostname === "beta.id.ai" ? "fgte5-ciaaa-aaaad-aaatq-cai" : "rdmx6-jaaaa-aaaaa-aaadq-cai"),
+      II_CANISTER_ID:
+        process.env.II_CANISTER_ID ||
+        (new URL(process.env.II_URL || "https://id.ai").hostname ===
+        "beta.id.ai"
+          ? "fgte5-ciaaa-aaaad-aaatq-cai"
+          : "rdmx6-jaaaa-aaaaa-aaadq-cai"),
     }),
     react(),
   ],
+
   resolve: {
     alias: [
       {
         find: "declarations",
-        replacement: fileURLToPath(new URL("../declarations", import.meta.url)),
+        replacement: fileURLToPath(
+          new URL("../declarations", import.meta.url)
+        ),
       },
       {
         find: "@",
         replacement: fileURLToPath(new URL("./src", import.meta.url)),
       },
     ],
-    dedupe: ["@icp-sdk/core"]
+    dedupe: ["@icp-sdk/core"],
   },
 });
