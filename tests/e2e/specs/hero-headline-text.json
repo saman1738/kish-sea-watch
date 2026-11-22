@@ -4,13 +4,8 @@
     "id": "hero-headline-text",
     "kind": "interactive",
     "goal": "The homepage hero shows the new headline text and the rest of the page still renders",
-    "requirementIndexes": [
-      0
-    ],
-    "acceptanceCriteriaIndexes": [
-      0,
-      1
-    ],
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
     "steps": [
       "Open the homepage"
     ],

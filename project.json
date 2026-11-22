@@ -1,21 +1,21 @@
 {
-  "overview": "A tropical neon beach and sea conditions app for Kish Island, showing live marine and weather data, beach comparisons, an interactive island map, community reports and an admin console.",
+  "overview": "A Kish Island sea-conditions dashboard that shows live marine and weather data for four monitored beaches, with a neon island map, beach comparison, community reports and an admin area.",
   "features": [
-    "Large tropical hero homepage with current sea conditions",
-    "Live marine and weather data with hourly and seven-day forecasts",
-    "Beach comparison ranked for swimming, fishing, surfing, water sports, kayaking and paddleboarding",
-    "Interactive Kish Island map with glowing beach markers",
-    "Community beach reports and official warnings",
-    "Admin console for beaches, reports and warnings",
-    "English and Persian with full right-to-left layout"
+    "Live water temperature, wave height, wind speed and UV index for Kish Island beaches",
+    "Four monitored beaches seeded and shown on an interactive neon island map",
+    "Swimming suitability and activity rankings with explained statuses",
+    "24-hour and seven-day forecasts with charts",
+    "Community reports and official warnings",
+    "Admin area to manage beaches, review reports and publish warnings",
+    "English and Persian with full right-to-left support"
   ],
-  "category": "weather",
+  "category": "weather-dashboard",
   "tags": [
-    "beach",
-    "ocean",
+    "marine",
     "weather",
-    "travel",
-    "retro"
+    "map",
+    "kish-island",
+    "dashboard"
   ],
-  "last_updated": "2026-11-21T13:24:20.667Z"
+  "last_updated": "2026-11-21T20:10:26.395Z"
 }

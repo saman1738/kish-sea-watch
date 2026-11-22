@@ -32,11 +32,14 @@ export function IslandMap({
   entries,
   selectedId,
   onSelect,
+  showEmpty = true,
   className,
 }: {
   entries: MapBeach[];
   selectedId: bigint | null;
   onSelect: (id: bigint) => void;
+  /** Render the empty message when no beach has usable coordinates. */
+  showEmpty?: boolean;
   className?: string;
 }) {
   const { pick, t } = useI18n();
@@ -146,7 +149,7 @@ export function IslandMap({
         />
       ))}
 
-      {entries.length === 0 ? (
+      {entries.length === 0 && showEmpty ? (
         <p
           data-ocid="map.empty_state"
           className="absolute inset-0 grid place-items-center px-6 text-center text-sm text-muted-foreground"

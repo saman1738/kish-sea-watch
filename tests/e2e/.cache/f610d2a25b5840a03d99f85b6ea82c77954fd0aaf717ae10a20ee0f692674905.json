@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T20:16:36.655Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Map\"",
+        "target": {
+          "role": "link",
+          "name": "Map"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "beaches-and-live-conditions.e2e.ts::beaches-and-live-conditions",
+      "targetId": "web",
+      "instructionDigest": "c530cb6674e7954a2e1d424d3fe0496377f8edbe963f1cd785d4b1a665580106",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the Map link in the navigation; the app navigated to /map, which renders the map page (map container boxes in main).",
+    "startPath": "/",
+    "endPath": "/map",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Kish Island map"
+      },
+      {
+        "text": "Monitored beaches with their current conditions."
+      },
+      {
+        "text": "Kish Island, Iran"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach"
+      },
+      {
+        "text": "Map legend"
+      },
+      {
+        "text": "Favorable"
+      },
+      {
+        "text": "Unfavorable"
+      },
+      {
+        "text": "Insufficient data"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "text": "Kish Island · Persian Gulf"
+      },
+      {
+        "role": "heading",
+        "name": "Let's Go Swim"
+      },
+      {
+        "text": "Live water temperature, waves, wind and UV for every monitored Kish beach — read the sea before you step in."
+      },
+      {
+        "role": "link",
+        "name": "View the map"
+      },
+      {
+        "text": "26.5233° · 53.9800°"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "text": "Right now on the island"
+      },
+      {
+        "text": "Water temp"
+      }
+    ],
+    "endWaitMs": 10737,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

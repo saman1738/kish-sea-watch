@@ -35,6 +35,11 @@ const en = {
   "common.errorTitle": "Could not load live conditions",
   "common.errorBody":
     "The Open-Meteo provider did not respond. Check your connection and try again.",
+  "common.backendErrorTitle": "Could not reach the beach service",
+  "common.backendErrorBody":
+    "The app could not load the monitored beaches from its backend. Check your connection and try again.",
+  "common.observedAt": "Observed",
+  "common.forecastAt": "Forecast for",
   "common.unit": "Unit",
   "common.back": "Back",
   "common.viewBeach": "View beach",
@@ -259,6 +264,12 @@ const en = {
   "map.selectedPanel": "Selected beach",
   "map.beachListLabel": "Monitored beaches",
   "map.selectHint": "Tap a glowing marker to inspect that beach.",
+  "map.noCoordinates": "No monitored beach has usable coordinates yet.",
+  "map.noCoordinatesBody":
+    "An administrator can set a latitude and longitude for each beach in the admin area.",
+  "map.conditionsUnavailable": "Marine data unavailable",
+  "map.conditionsUnavailableBody":
+    "The marine provider did not return waves or sea temperature. Wind and UV still show.",
   "reports.feedHeading": "Report feed",
   "reports.beachFilterLabel": "Beach filter",
   "reports.emptyFeed": "No reports match this filter yet.",
@@ -298,6 +309,11 @@ const fa: Record<TranslationKey, string> = {
   "common.errorTitle": "بارگذاری شرایط زنده ممکن نشد",
   "common.errorBody":
     "سرویس Open-Meteo پاسخ نداد. اتصال خود را بررسی و دوباره تلاش کنید.",
+  "common.backendErrorTitle": "دسترسی به سرویس ساحل‌ها ممکن نشد",
+  "common.backendErrorBody":
+    "برنامه نتوانست ساحل‌های پایش‌شده را از سرور خود بارگذاری کند. اتصال خود را بررسی و دوباره تلاش کنید.",
+  "common.observedAt": "اندازه‌گیری‌شده در",
+  "common.forecastAt": "پیش‌بینی برای",
   "common.unit": "واحد",
   "common.back": "بازگشت",
   "common.viewBeach": "مشاهده ساحل",
@@ -515,6 +531,12 @@ const fa: Record<TranslationKey, string> = {
   "map.selectedPanel": "ساحل انتخاب‌شده",
   "map.beachListLabel": "ساحل‌های پایش‌شده",
   "map.selectHint": "برای دیدن جزئیات، روی نشانگر درخشان بزنید.",
+  "map.noCoordinates": "هنوز هیچ ساحل پایش‌شده‌ای مختصات قابل‌استفاده ندارد.",
+  "map.noCoordinatesBody":
+    "مدیر می‌تواند برای هر ساحل در بخش مدیریت عرض و طول جغرافیایی تعیین کند.",
+  "map.conditionsUnavailable": "داده دریایی در دسترس نیست",
+  "map.conditionsUnavailableBody":
+    "سرویس دریایی موج یا دمای آب را برنگرداند. باد و UV همچنان نمایش داده می‌شوند.",
   "reports.feedHeading": "جریان گزارش‌ها",
   "reports.beachFilterLabel": "فیلتر ساحل",
   "reports.emptyFeed": "هنوز گزارشی با این فیلتر نیست.",

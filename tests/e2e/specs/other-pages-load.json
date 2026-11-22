@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "other-pages-load",
+    "kind": "interactive",
+    "goal": "The comparison, reports and admin pages still load",
+    "requirementIndexes": [
+      12,
+      13
+    ],
+    "acceptanceCriteriaIndexes": [
+      4,
+      5
+    ],
+    "steps": [
+      "Open the compare page",
+      "Open the reports page",
+      "Open the admin page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Marjan Beach"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Report"
+      },
+      {
+        "afterStep": 2,
+        "expectText": "Admin"
+      }
+    ]
+  }
+}

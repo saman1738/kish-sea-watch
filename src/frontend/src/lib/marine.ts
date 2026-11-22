@@ -2,7 +2,7 @@
  * Open-Meteo marine + weather data layer.
  *
  * Two providers are merged into one normalized snapshot:
- *  - https://marine-api.open-meteo.com/v1/marine  (waves, swell, currents, water temp)
+ *  - https://marine-api.open-meteo.com/v1/marine  (waves, swell, currents, sea temp)
  *  - https://api.open-meteo.com/v1/forecast       (air, wind, UV, sun, precipitation)
  *
  * Every value is `number | null`; a null is rendered as "No data" and never
@@ -13,13 +13,26 @@ export const MARINE_ENDPOINT = "https://marine-api.open-meteo.com/v1/marine";
 export const WEATHER_ENDPOINT = "https://api.open-meteo.com/v1/forecast";
 export const FORECAST_TIMEZONE = "Asia/Tehran";
 
+/**
+ * Marine hourly variables. The provider names sea temperature
+ * `sea_surface_temperature`; `water_temperature` is rejected with a 400.
+ */
 const MARINE_HOURLY = [
-  "water_temperature",
+  "sea_surface_temperature",
   "wave_height",
   "wave_direction",
   "wave_period",
   "swell_wave_height",
   "swell_wave_direction",
+  "ocean_current_velocity",
+  "ocean_current_direction",
+] as const;
+
+const MARINE_CURRENT = [
+  "sea_surface_temperature",
+  "wave_height",
+  "wave_direction",
+  "wave_period",
   "ocean_current_velocity",
   "ocean_current_direction",
 ] as const;
@@ -38,7 +51,6 @@ const WEATHER_DAILY = [
   "uv_index_max",
   "sunrise",
   "sunset",
-  "wave_height_max",
   "wind_speed_10m_max",
   "temperature_2m_max",
   "temperature_2m_min",
@@ -63,6 +75,7 @@ export interface HourlyPoint {
   wavePeriod: number | null;
   swellHeight: number | null;
   swellDirection: number | null;
+  /** Ocean current speed in m/s (provider reports km/h). */
   currentSpeed: number | null;
   currentDirection: number | null;
   airTemp: number | null;
@@ -91,6 +104,8 @@ export interface MarineSnapshot {
   timezone: string;
   /** Provider generation time (ISO), used for the "last updated" label. */
   fetchedAt: string;
+  /** Observation time of the current reading (ISO local), when provided. */
+  observedAt: string | null;
   current: HourlyPoint | null;
   hourly: HourlyPoint[];
   daily: DailyPoint[];
@@ -132,6 +147,7 @@ export function marineUrl(latitude: number, longitude: number): string {
     latitude: latitude.toFixed(4),
     longitude: longitude.toFixed(4),
     hourly: MARINE_HOURLY.join(","),
+    current: MARINE_CURRENT.join(","),
     daily: "wave_height_max",
     timezone: FORECAST_TIMEZONE,
     forecast_days: "7",
@@ -177,6 +193,13 @@ function currentIndex(times: unknown[], currentTime: string | null): number {
   return best;
 }
 
+function hourlyTimes(marine: Json | null, weather: Json | null): unknown[] {
+  const wHourly = (weather?.hourly as Json | undefined) ?? {};
+  const mHourly = (marine?.hourly as Json | undefined) ?? {};
+  const wTimes = series(wHourly, "time");
+  return wTimes.length > 0 ? wTimes : series(mHourly, "time");
+}
+
 function mergeHourly(
   marine: Json | null,
   weather: Json | null,
@@ -184,26 +207,24 @@ function mergeHourly(
 ): HourlyPoint | null {
   const mHourly = (marine?.hourly as Json | undefined) ?? {};
   const wHourly = (weather?.hourly as Json | undefined) ?? {};
-  const times =
-    series(wHourly, "time").length > 0
-      ? series(wHourly, "time")
-      : series(mHourly, "time");
+  const times = hourlyTimes(marine, weather);
   if (index < 0 || index >= times.length) return null;
   const time = str(times[index]);
   if (!time) return null;
 
   const m = (key: string) => num(at(series(mHourly, key), index));
   const w = (key: string) => num(at(series(wHourly, key), index));
+  const currentKmh = m("ocean_current_velocity");
 
   return {
     time,
-    waterTemp: m("water_temperature"),
+    waterTemp: m("sea_surface_temperature"),
     waveHeight: m("wave_height"),
     waveDirection: m("wave_direction"),
     wavePeriod: m("wave_period"),
     swellHeight: m("swell_wave_height"),
     swellDirection: m("swell_wave_direction"),
-    currentSpeed: m("ocean_current_velocity"),
+    currentSpeed: currentKmh === null ? null : currentKmh / 3.6,
     currentDirection: m("ocean_current_direction"),
     airTemp: w("temperature_2m"),
     windSpeed: w("wind_speed_10m"),
@@ -216,12 +237,7 @@ function mergeHourly(
 }
 
 function buildHourly(marine: Json | null, weather: Json | null): HourlyPoint[] {
-  const mHourly = (marine?.hourly as Json | undefined) ?? {};
-  const wHourly = (weather?.hourly as Json | undefined) ?? {};
-  const times =
-    series(wHourly, "time").length > 0
-      ? series(wHourly, "time")
-      : series(mHourly, "time");
+  const times = hourlyTimes(marine, weather);
   const points: HourlyPoint[] = [];
   for (let i = 0; i < times.length; i += 1) {
     const point = mergeHourly(marine, weather, i);
@@ -246,9 +262,7 @@ function buildDaily(marine: Json | null, weather: Json | null): DailyPoint[] {
       uvMax: num(at(series(wDaily, "uv_index_max"), i)),
       sunrise: str(at(series(wDaily, "sunrise"), i)),
       sunset: str(at(series(wDaily, "sunset"), i)),
-      waveHeightMax:
-        num(at(series(mDaily, "wave_height_max"), i)) ??
-        num(at(series(wDaily, "wave_height_max"), i)),
+      waveHeightMax: num(at(series(mDaily, "wave_height_max"), i)),
       windSpeedMax: num(at(series(wDaily, "wind_speed_10m_max"), i)),
       tempMax: num(at(series(wDaily, "temperature_2m_max"), i)),
       tempMin: num(at(series(wDaily, "temperature_2m_min"), i)),
@@ -265,15 +279,12 @@ export function normalizeSnapshot(
   longitude: number,
 ): MarineSnapshot {
   const hourly = buildHourly(marine, weather);
-  const wHourly = (weather?.hourly as Json | undefined) ?? {};
-  const mHourly = (marine?.hourly as Json | undefined) ?? {};
-  const times =
-    series(wHourly, "time").length > 0
-      ? series(wHourly, "time")
-      : series(mHourly, "time");
+  const times = hourlyTimes(marine, weather);
   const currentTime = str((weather?.current as Json | undefined)?.time);
   const idx = currentIndex(times, currentTime);
-  const current = mergeHourly(marine, weather, idx);
+  // Prefer the provider's `current` block; fall back to the hourly row at the
+  // current hour so a provider that omits `current` still yields a reading.
+  const current = mergeHourly(marine, weather, idx) ?? hourly[0] ?? null;
 
   const marineMissing =
     !marine ||
@@ -287,6 +298,7 @@ export function normalizeSnapshot(
     timezone:
       str(weather?.timezone) ?? str(marine?.timezone) ?? FORECAST_TIMEZONE,
     fetchedAt: new Date().toISOString(),
+    observedAt: current?.time ?? null,
     current,
     hourly,
     daily: buildDaily(marine, weather),

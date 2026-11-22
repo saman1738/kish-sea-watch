@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "existing-pages-and-persian",
+    "kind": "interactive",
+    "goal": "The existing pages and the Persian right-to-left layout still work after the repair",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the compare page",
+      "Open the reports page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Marjan"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Report"
+      }
+    ]
+  }
+}

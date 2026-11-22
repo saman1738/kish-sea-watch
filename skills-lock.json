@@ -54,7 +54,7 @@
     "extension-authorization": {
       "source": "caffeinelabs/skills",
       "sourceType": "github",
-      "computedHash": "db70899f3cb88028de8500e75d78cad85a1a729288432bb00d0ceedc9363d7df"
+      "computedHash": "3ee03fe2de43c57bf9bda719284f147df249a8c41f63d3e9f88dffd434c0512f"
     },
     "extension-camera": {
       "source": "caffeinelabs/skills",
@@ -64,7 +64,7 @@
     "extension-core-infrastructure": {
       "source": "caffeinelabs/skills",
       "sourceType": "github",
-      "computedHash": "2ddce3420de052ff6ca88982a3a9b7ae440653ffb94840d897d944393a33c700"
+      "computedHash": "00f62fa97fb77f25ac28c8bd66d2f0f121933e3ab1c413d539731cf78429f47a"
     },
     "extension-email": {
       "source": "caffeinelabs/skills",
@@ -149,7 +149,7 @@
     "migrating-motoko-actors": {
       "source": "caffeinelabs/skills",
       "sourceType": "github",
-      "computedHash": "6b1deeebe78cc2f6e5272e8682401549e588a7c2495ec239e36499c54649730f"
+      "computedHash": "4e87e7dfcb3d80026245aea967e3a3d7bcb2bd403ffc08de552501afb74bdf2f"
     },
     "troubleshooting-motoko-migrations": {
       "source": "caffeinelabs/skills",
@@ -159,7 +159,7 @@
     "writing-motoko": {
       "source": "caffeinelabs/skills",
       "sourceType": "github",
-      "computedHash": "f006a7f4afe27ee39d7b981c933fe8793cc5d53bc5700385790acee84840657a"
+      "computedHash": "9806abebef168e3e104b49b0c9a58fec447bc682593fe8de5eb280ab6b5a9621"
     }
   }
 }

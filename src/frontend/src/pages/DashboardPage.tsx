@@ -1,5 +1,6 @@
 import type { Beach } from "@/backend";
 import {
+  BackendError,
   ConditionsError,
   ConditionsSkeleton,
 } from "@/components/conditions/ConditionsStates";
@@ -60,12 +61,17 @@ export default function DashboardPage() {
     : undefined;
 
   const refresh = () => {
+    void beachesQuery.refetch();
     void conditions.refetch();
   };
 
-  const isRefreshing = conditions.isFetching;
+  const isRefreshing = conditions.isFetching || beachesQuery.isFetching;
+  const backendFailed = beachesQuery.isError && beaches.length === 0;
   const showError = conditions.isError && !snapshot;
   const showLoading = conditions.isPending && !snapshot;
+  // Only show live metrics once a beach is known and its conditions resolved;
+  // otherwise the hero would present "No data" as if it were a reading.
+  const showHeroMetrics = !!activeBeach && !!snapshot;
 
   return (
     <PageShell data-ocid="dashboard.page">
@@ -78,9 +84,16 @@ export default function DashboardPage() {
         fetchedAt={snapshot?.fetchedAt ?? null}
         onRefresh={refresh}
         isRefreshing={isRefreshing}
+        showMetrics={showHeroMetrics}
       />
 
-      {beachesQuery.isPending ? (
+      {backendFailed ? (
+        <BackendError
+          className="mt-6"
+          onRetry={refresh}
+          isRetrying={beachesQuery.isFetching}
+        />
+      ) : beachesQuery.isPending ? (
         <ConditionsSkeleton className="mt-6" />
       ) : beaches.length === 0 ? (
         <DashboardEmpty className="mt-6" />

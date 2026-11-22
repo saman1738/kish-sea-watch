@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "island-map-four-beaches",
+    "kind": "interactive",
+    "goal": "The map page renders all four seeded beaches at their coordinates instead of the empty state",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the map page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Simorgh"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Mir Mahna"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Fisherman"
+      },
+      {
+        "afterStep": 0,
+        "expectNoText": "No beaches with coordinates are available."
+      }
+    ]
+  }
+}

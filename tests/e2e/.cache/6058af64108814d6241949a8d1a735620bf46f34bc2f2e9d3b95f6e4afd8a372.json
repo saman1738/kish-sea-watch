@@ -1,6 +1,6 @@
 {
   "schemaVersion": "trace-1",
-  "createdAt": "2026-11-21T13:34:39.213Z",
+  "createdAt": "2026-11-21T20:16:30.648Z",
   "payload": {
     "actions": [
       {
@@ -29,7 +29,7 @@
       "provider": "caffeine-inference.chat",
       "model": "deepseek-v4.1-flash"
     },
-    "summary": "Tapped \"Simorgh Beach\" in the beach switcher; it is now the pressed/selected beach (26.5333° · 54.0200°) and the dashboard shows Simorgh Beach conditions (e.g. \"Not enough live data to estimate suitability. Simorgh Beach.\").",
+    "summary": "Tapped \"Simorgh Beach\" in the beach switcher; it is now the pressed/selected beach (button \"Simorgh Beach\" [pressed]) and the page shows Simorgh Beach's conditions (26.5333° · 54.0200°, Caution, water temp 28.5°C, wave 0.7 m) with the suitability note naming Simorgh Beach.",
     "startPath": "/",
     "endPath": "/",
     "endAnchors": [
@@ -40,7 +40,7 @@
         "text": "26.5333° · 54.0200°"
       },
       {
-        "text": "Insufficient data"
+        "text": "Caution"
       },
       {
         "role": "button",
@@ -54,16 +54,19 @@
         ]
       },
       {
-        "text": "km/h"
+        "text": "Water temp"
       },
       {
-        "text": "W"
+        "text": "28.5"
       },
       {
-        "text": "0.1"
+        "text": "°C"
       }
     ],
     "goneAnchors": [
+      {
+        "text": "No data"
+      },
       {
         "text": "Marjan Beach"
       },
@@ -85,7 +88,7 @@
         "text": "Loading conditions…"
       }
     ],
-    "endWaitMs": 11699,
+    "endWaitMs": 10329,
     "keyedBy": {
       "cacheSchema": "trace-1",
       "policyVersion": "conservative/6",

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "homepage-beaches-and-conditions",
+    "kind": "interactive",
+    "goal": "The homepage loads the four seeded beaches from the backend and shows the active beach's water temperature, wave height, wind speed and UV index, or an explicit unavailable label for any metric the source cannot provide",
+    "requirementIndexes": [],
+    "acceptanceCriteriaIndexes": [],
+    "steps": [
+      "Open the homepage",
+      "Reload the page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Marjan"
+      },
+      {
+        "afterStep": 0,
+        "expectNoText": "No beaches with coordinates are available."
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Marjan"
+      }
+    ]
+  }
+}

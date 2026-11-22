@@ -5,15 +5,26 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 export const BEACHES_KEY = ["beaches"] as const;
 
+/**
+ * Monitored beaches from the backend canister.
+ *
+ * The actor is created asynchronously from the deployed canister id, so the
+ * query stays disabled until it exists and then runs on its own — no manual
+ * refetch is needed once the actor becomes ready. A missing actor throws
+ * instead of resolving to `[]`, so an unreachable backend surfaces as an
+ * error state rather than a misleading empty beach list.
+ */
 export function useBeaches() {
   const { actor, isFetching } = useActor(createActor);
   return useQuery<Beach[]>({
     queryKey: BEACHES_KEY,
     queryFn: async () => {
-      if (!actor) return [];
+      if (!actor) throw new Error("Backend is not ready");
       return actor.listBeaches();
     },
     enabled: !!actor && !isFetching,
+    staleTime: 60 * 1000,
+    retry: 2,
   });
 }
 
@@ -22,10 +33,12 @@ export function useBeach(id: bigint | null) {
   return useQuery<Beach | null>({
     queryKey: ["beach", id?.toString() ?? "none"],
     queryFn: async () => {
-      if (!actor || id === null) return null;
+      if (!actor) throw new Error("Backend is not ready");
+      if (id === null) return null;
       return actor.getBeach(id);
     },
     enabled: !!actor && !isFetching && id !== null,
+    retry: 2,
   });
 }
 

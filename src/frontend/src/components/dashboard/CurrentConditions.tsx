@@ -38,6 +38,14 @@ export function CurrentConditions({
   const currentDir = compassLabel(current?.currentDirection ?? null);
   const waveDir = compassLabel(current?.waveDirection ?? null);
 
+  const observedClock = formatClock(snapshot.observedAt ?? current?.time);
+  const observedCaption = observedClock
+    ? `${t("common.observedAt")} ${observedClock}`
+    : t("common.noData");
+  const forecastCaption = observedClock
+    ? `${t("common.forecastAt")} ${observedClock}`
+    : t("common.forecast");
+
   return (
     <section
       data-ocid="dashboard.current_panel"
@@ -53,7 +61,7 @@ export function CurrentConditions({
             {t("section.current")}
           </h2>
           <p className="mt-0.5 text-[0.7rem] uppercase tracking-[0.08em] text-muted-foreground">
-            {t("common.forecast")} · {t("common.timezone")}
+            {observedCaption} · {t("common.timezone")}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -66,11 +74,20 @@ export function CurrentConditions({
               tone="muted"
               data-ocid="dashboard.marine_missing_badge"
             >
-              {t("common.noData")}
+              {t("map.conditionsUnavailable")}
             </StatusBadge>
           ) : null}
         </div>
       </div>
+
+      {snapshot.marineMissing ? (
+        <p
+          data-ocid="dashboard.marine_missing_note"
+          className="border-b border-border/60 bg-secondary/30 px-5 py-2 text-[0.7rem] leading-relaxed text-muted-foreground"
+        >
+          {t("map.conditionsUnavailableBody")}
+        </p>
+      ) : null}
 
       <div className="grid grid-cols-2 gap-2 p-4 sm:grid-cols-3 lg:grid-cols-4">
         <MetricTile
@@ -78,6 +95,7 @@ export function CurrentConditions({
           label={t("metric.waterTemp")}
           value={fmt(current?.waterTemp ?? null, 1, num)}
           unit={t("common.celsius")}
+          caption={observedCaption}
           gauge={gaugePosition(current?.waterTemp ?? null, 18, 34)}
         />
         <MetricTile
@@ -86,6 +104,7 @@ export function CurrentConditions({
           value={fmt(current?.waveHeight ?? null, 1, num)}
           unit={t("common.meters")}
           detail={waveDir}
+          caption={observedCaption}
           gauge={gaugePosition(current?.waveHeight ?? null, 0, 2.5)}
         />
         <MetricTile
@@ -94,6 +113,7 @@ export function CurrentConditions({
           value={fmt(current?.windSpeed ?? null, 0, num)}
           unit={t("common.kmh")}
           detail={windDir}
+          caption={forecastCaption}
           gauge={gaugePosition(current?.windSpeed ?? null, 0, 50)}
         />
         <MetricTile
@@ -102,12 +122,14 @@ export function CurrentConditions({
           value={fmt(current?.currentSpeed ?? null, 2, num)}
           unit={t("common.ms")}
           detail={currentDir}
+          caption={observedCaption}
           gauge={gaugePosition(current?.currentSpeed ?? null, 0, 1)}
         />
         <MetricTile
           data-ocid="dashboard.metric.uv"
           label={t("metric.uvIndex")}
           value={fmt(current?.uvIndex ?? null, 1, num)}
+          caption={forecastCaption}
           gauge={gaugePosition(current?.uvIndex ?? null, 0, 12)}
         />
         <MetricTile
@@ -115,6 +137,7 @@ export function CurrentConditions({
           label={t("metric.airTemp")}
           value={fmt(current?.airTemp ?? null, 1, num)}
           unit={t("common.celsius")}
+          caption={forecastCaption}
         />
         <MetricTile
           data-ocid="dashboard.metric.sunrise"

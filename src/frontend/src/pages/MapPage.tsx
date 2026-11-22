@@ -1,4 +1,4 @@
-import { ConditionsError } from "@/components/conditions/ConditionsStates";
+import { BackendError } from "@/components/conditions/ConditionsStates";
 import { LastUpdated } from "@/components/layout/LastUpdated";
 import { PageHeader, PageShell } from "@/components/layout/PageHeader";
 import { BeachMapCard } from "@/components/map/BeachMapCard";
@@ -38,6 +38,10 @@ export default function MapPage() {
       ? new Date(beachesQuery.dataUpdatedAt).toISOString()
       : null);
 
+  const backendFailed = beachesQuery.isError && beaches.length === 0;
+  const noCoordinates =
+    !beachesQuery.isPending && !backendFailed && entries.length === 0;
+
   return (
     <PageShell>
       <PageHeader
@@ -53,8 +57,8 @@ export default function MapPage() {
         }
       />
 
-      {beachesQuery.isError ? (
-        <ConditionsError
+      {backendFailed ? (
+        <BackendError
           className="mt-6"
           onRetry={() => void beachesQuery.refetch()}
           isRetrying={beachesQuery.isFetching}
@@ -62,7 +66,7 @@ export default function MapPage() {
       ) : (
         <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
           <div className="min-w-0">
-            {beachesQuery.isLoading ? (
+            {beachesQuery.isPending ? (
               <div
                 data-ocid="map.loading_state"
                 aria-busy="true"
@@ -73,8 +77,23 @@ export default function MapPage() {
                 entries={entries}
                 selectedId={selectedId}
                 onSelect={setSelectedId}
+                showEmpty={false}
               />
             )}
+
+            {noCoordinates ? (
+              <div
+                data-ocid="map.no_coordinates_state"
+                className="mt-3 flex flex-col gap-1 rounded-2xl border border-dashed border-border/70 bg-card/60 px-4 py-3"
+              >
+                <p className="font-display text-sm font-bold uppercase tracking-wide text-foreground">
+                  {t("map.noCoordinates")}
+                </p>
+                <p className="text-xs leading-relaxed text-muted-foreground">
+                  {t("map.noCoordinatesBody")}
+                </p>
+              </div>
+            ) : null}
 
             <div
               data-ocid="map.legend"
@@ -116,6 +135,15 @@ export default function MapPage() {
               </div>
             )}
 
+            {selected && conditions.data?.marineMissing ? (
+              <p
+                data-ocid="map.selected_marine_missing"
+                className="mt-3 rounded-xl border border-border/60 bg-secondary/40 px-3 py-2 text-[0.7rem] leading-relaxed text-muted-foreground"
+              >
+                {t("map.conditionsUnavailableBody")}
+              </p>
+            ) : null}
+
             {selected && conditions.isError ? (
               <Button
                 type="button"
@@ -135,59 +163,63 @@ export default function MapPage() {
               </Button>
             ) : null}
 
-            <div className="mt-4">
-              <p className="label-caps mb-2 text-primary">
-                {t("map.beachListLabel")}
-              </p>
-              <ul
-                data-ocid="map.beach_list"
-                className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border/60 bg-card/70 backdrop-blur"
-              >
-                {entries.map((entry, index) => {
-                  const active = entry.beach.id === selectedId;
-                  return (
-                    <li key={entry.beach.id.toString()}>
-                      <button
-                        type="button"
-                        data-ocid={`map.beach_item.${index + 1}`}
-                        aria-pressed={active}
-                        onClick={() => setSelectedId(entry.beach.id)}
-                        className={cn(
-                          "flex w-full items-center justify-between gap-2 px-3 py-2.5 text-start transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent",
-                          active
-                            ? "bg-accent/10 shadow-[inset_3px_0_0_oklch(0.68_0.24_345)]"
-                            : "hover:bg-primary/10",
-                        )}
-                      >
-                        <span className="flex min-w-0 items-center gap-2">
-                          <span
-                            aria-hidden="true"
-                            className={cn(
-                              "size-1.5 shrink-0 rounded-full",
-                              active
-                                ? "bg-accent shadow-[0_0_8px_oklch(0.68_0.24_345/0.95)]"
-                                : "bg-primary/70",
-                            )}
-                          />
-                          <span
-                            className={cn(
-                              "min-w-0 truncate text-sm font-medium",
-                              active ? "text-foreground" : "text-foreground/90",
-                            )}
-                          >
-                            {pick(entry.beach.nameEn, entry.beach.nameFa)}
+            {entries.length > 0 ? (
+              <div className="mt-4">
+                <p className="label-caps mb-2 text-primary">
+                  {t("map.beachListLabel")}
+                </p>
+                <ul
+                  data-ocid="map.beach_list"
+                  className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border/60 bg-card/70 backdrop-blur"
+                >
+                  {entries.map((entry, index) => {
+                    const active = entry.beach.id === selectedId;
+                    return (
+                      <li key={entry.beach.id.toString()}>
+                        <button
+                          type="button"
+                          data-ocid={`map.beach_item.${index + 1}`}
+                          aria-pressed={active}
+                          onClick={() => setSelectedId(entry.beach.id)}
+                          className={cn(
+                            "flex w-full items-center justify-between gap-2 px-3 py-2.5 text-start transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent",
+                            active
+                              ? "bg-accent/10 shadow-[inset_3px_0_0_oklch(0.68_0.24_345)]"
+                              : "hover:bg-primary/10",
+                          )}
+                        >
+                          <span className="flex min-w-0 items-center gap-2">
+                            <span
+                              aria-hidden="true"
+                              className={cn(
+                                "size-1.5 shrink-0 rounded-full",
+                                active
+                                  ? "bg-accent shadow-[0_0_8px_oklch(0.68_0.24_345/0.95)]"
+                                  : "bg-primary/70",
+                              )}
+                            />
+                            <span
+                              className={cn(
+                                "min-w-0 truncate text-sm font-medium",
+                                active
+                                  ? "text-foreground"
+                                  : "text-foreground/90",
+                              )}
+                            >
+                              {pick(entry.beach.nameEn, entry.beach.nameFa)}
+                            </span>
                           </span>
-                        </span>
-                        <span className="numeric shrink-0 font-mono text-[0.65rem] text-muted-foreground">
-                          {entry.beach.latitude.toFixed(3)}°,{" "}
-                          {entry.beach.longitude.toFixed(3)}°
-                        </span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+                          <span className="numeric shrink-0 font-mono text-[0.65rem] text-muted-foreground">
+                            {entry.beach.latitude.toFixed(3)}°,{" "}
+                            {entry.beach.longitude.toFixed(3)}°
+                          </span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ) : null}
           </div>
         </div>
       )}

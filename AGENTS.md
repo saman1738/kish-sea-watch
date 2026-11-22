@@ -38,11 +38,6 @@
 
 ## Learnings
 
-- Open-Meteo marine and weather endpoints need no API key and return data for Kish Island coordinates around 26.55 N, 53.98 E with timezone Asia/Tehran
-- Marine forecast resolution is coarse near Kish Island, so missing marine values must render as No data rather than a substituted number
-- Open-Meteo marine data near Kish Island can return null water temperature and wave values; render them as No data and use the Insufficient data status rather than substituting numbers
-- Backend Report and Warning timestamps are nanosecond bigints; divide by 1_000_000n before constructing a Date
-- index.css defines --success and --warning tokens that tailwind.config.js must map or text-success and bg-warning classes silently no-op
 - TanStack Router: export the router from src/router.tsx and render RouterProvider in App.tsx to avoid circular imports
 - Biome rejects role=listbox on ul and role=group on div; use plain ul and fieldset with border-0 for chip groups
 - Mobile comparison rows must own their own useConditions query in a child component; a page-level map of hooks breaks the rules of hooks
@@ -58,3 +53,13 @@
 - CompareMatrix is a per-beach card list rather than a table so narrow Android viewports never overflow horizontally
 - Hero content must sit in a z-10 wrapper so the hero-vice palm and horizon pseudo-layers stay behind the text
 - The hero headline is a single i18n key hero.headline consumed only by HeroSection.tsx:104; changing it requires updating both en and fa dictionaries in lib/i18n.tsx
+- src/frontend/env.json ships literal "undefined" placeholders on purpose; Caffeine injects the real backend canister id and host at deploy time, so never edit env.json with real values
+- Backend actor state in src/backend/main.mo must be initialized in the actor body and seeded there, because the stable migration only runs when upgrading an existing canister
+- Seeding must stay idempotent: only insert the predefined beaches when the beach map is empty so admin edits are never overwritten
+- With --enhanced-migration, stable actor fields in src/backend/main.mo cannot carry initializers; a fresh install needs an explicit Seed.ensureSeeded call in the actor body because the migration only runs on upgrade
+- Open-Meteo marine rejects water_temperature with HTTP 400; the sea temperature variable is sea_surface_temperature and ocean_current_velocity is in km/h
+- useActor returns null until its async actor query resolves, so backend queries must stay enabled on actor presence and refetch themselves
+- IslandMap's map.empty state shows whenever listBeaches() is empty, so backend seeding failures surface as a map empty state
+- useBeaches must throw when the actor is null, not return [], so an unreachable backend shows BackendError instead of a misleading empty beach list
+- IslandMap takes showEmpty so MapPage can own the no-coordinates message and never show map.empty during loading or backend failure
+- Fresh installs replay the migration chain from an empty actor, so main.mo must still call Seed.ensureSeeded in the actor body; the migration alone does not seed a new canister

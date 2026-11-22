@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T17:09:18.369Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Map\"",
+        "target": {
+          "role": "link",
+          "name": "Map"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "island-map-four-beaches.e2e.ts::island-map-four-beaches",
+      "targetId": "web",
+      "instructionDigest": "c530cb6674e7954a2e1d424d3fe0496377f8edbe963f1cd785d4b1a665580106",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the Map nav link; the app navigated to /map showing the \"Kish Island map\" page with four beach markers (Marjan Beach, Simorgh Beach, Mir Mahna Coastal Park, Fisherman Beach Park), a map legend, and a monitored beaches list.",
+    "startPath": "/",
+    "endPath": "/map",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Kish Island map"
+      },
+      {
+        "text": "Monitored beaches with their current conditions."
+      },
+      {
+        "text": "Updated"
+      },
+      {
+        "text": "· Asia/Tehran"
+      },
+      {
+        "text": "Refresh"
+      },
+      {
+        "text": "Kish Island, Iran"
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      }
+    ],
+    "endWaitMs": 11290,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -12,6 +12,23 @@
       ],
       "last": "passed"
     },
+    "beaches-and-live-conditions": {
+      "plan": [
+        "0b278c52b845ff69",
+        "210d2cf423c6bdbd",
+        "29864722d73f39de",
+        "2c952d9397f42cce",
+        "497b50c660cd187f",
+        "56722bab003ef0d2",
+        "7929dbd44b756fd5",
+        "a34d64d3e1dbf5cd",
+        "be691fbfd6b69514",
+        "c543c280986d50be",
+        "da543366d769b9ed",
+        "f1b489f9ed44bb89"
+      ],
+      "last": "passed"
+    },
     "community-report": {
       "plan": [
         "6fea3c04cb357573",
@@ -55,6 +72,14 @@
         "d5960a691a05411b",
         "e02fc572e72bfbc9",
         "e2211ce41714c4a9"
+      ],
+      "last": "passed"
+    },
+    "existing-pages-and-persian": {
+      "plan": [
+        "03a83c08f2cf8ae3",
+        "a9d7e1c675cefb70",
+        "bd90e1b6be1cc345"
       ],
       "last": "passed"
     },
@@ -102,11 +127,61 @@
       ],
       "last": "passed"
     },
+    "homepage-beaches-and-conditions": {
+      "plan": [
+        "02bfeb1bf4a7a604",
+        "038abe035f30dba2",
+        "06aa4600c02b45bf",
+        "2827d298bccb4b78",
+        "2dd6607a8b288839",
+        "2f92ddb9d949939f",
+        "448465191922a206",
+        "4727549013d04f11",
+        "47a8dd2bb55737d5",
+        "5cb807337fee679b",
+        "793ab334f8120237",
+        "8c96e141de3abaff",
+        "9a71bed4e709e455",
+        "a47d37f7d9f87bae",
+        "e771eac6ed7143bc",
+        "e85d14288c4dba78",
+        "eaacc49c33433fd6",
+        "eedb2d72825d3ffd"
+      ],
+      "last": "passed"
+    },
     "island-map": {
       "plan": [
         "a0270d2c2534c22c",
         "f08924c445ea5fb3",
         "f974f6054630802f"
+      ],
+      "last": "passed"
+    },
+    "island-map-four-beaches": {
+      "plan": [
+        "64ae150e861de935",
+        "9e89f2a67b8feadc",
+        "a079d1d3de4dac3e"
+      ],
+      "last": "passed"
+    },
+    "map-beach-conditions": {
+      "plan": [
+        "17f748f368e184bc",
+        "273d44cca7de5b74",
+        "57de9967d6193bcc",
+        "816e8d4ca98e5eb9",
+        "bd58d95b200cf691"
+      ],
+      "last": "passed"
+    },
+    "other-pages-load": {
+      "plan": [
+        "5a1d2dad02de167c",
+        "d412d2319f348ff2",
+        "f1b489f9ed44bb89",
+        "f2eb52ac6055d563"
       ],
       "last": "passed"
     },
@@ -126,6 +201,12 @@
     "home-conditions-and-navigation",
     "persian-rtl-layout",
     "community-reports-feed",
-    "hero-headline-text"
+    "hero-headline-text",
+    "homepage-beaches-and-conditions",
+    "island-map-four-beaches",
+    "existing-pages-and-persian",
+    "beaches-and-live-conditions",
+    "map-beach-conditions",
+    "other-pages-load"
   ]
 }

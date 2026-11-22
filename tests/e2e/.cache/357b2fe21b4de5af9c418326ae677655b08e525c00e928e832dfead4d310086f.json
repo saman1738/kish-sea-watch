@@ -1,6 +1,6 @@
 {
   "schemaVersion": "trace-1",
-  "createdAt": "2026-11-21T13:10:27.915Z",
+  "createdAt": "2026-11-21T17:08:14.204Z",
   "payload": {
     "actions": [
       {
@@ -28,7 +28,7 @@
       "provider": "caffeine-inference.chat",
       "model": "deepseek-v4.1-flash"
     },
-    "summary": "Tapped the \"Mir Mahna Coastal Park\" marker on the Kish Island map. A detail panel opened for Mir Mahna Coastal Park (26.5500° · 53.9700°) showing Insufficient data, wind 13 km/h W, UV 0.7, and a \"View beach\" link to /beaches/2.",
+    "summary": "The Mir Mahna Coastal Park marker is selected: its button reads pressed/focused and a detail region \"Mir Mahna Coastal Park\" is open showing 26.5500° · 53.9700°, Favorable conditions, water temp 28.5°C, wave 0.8 m, wind 7 km/h NW, UV 0.0, and a \"View beach\" link.",
     "startPath": "/map",
     "endPath": "/map",
     "endAnchors": [
@@ -57,7 +57,7 @@
         "text": "Water temp"
       },
       {
-        "text": "No data"
+        "text": "28.5"
       },
       {
         "text": "°C"
@@ -72,11 +72,14 @@
         "text": "Open beach details"
       },
       {
+        "text": "Tap a glowing marker to inspect that beach."
+      },
+      {
         "role": "button",
         "name": "Mir Mahna Coastal Park 26.550°, 53.970°"
       }
     ],
-    "endWaitMs": 11105,
+    "endWaitMs": 10170,
     "keyedBy": {
       "cacheSchema": "trace-1",
       "policyVersion": "conservative/6",

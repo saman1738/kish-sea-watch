@@ -5,7 +5,7 @@
       "flowId": "beach-comparison",
       "specDigest": "bd13a50bcb16f8b82b454aeb5550c05db8cb255b35d0442ab5e374e8fbdc049f",
       "status": "recorded",
-      "recordedAt": "2026-11-21T13:34:58.337Z",
+      "recordedAt": "2026-11-21T17:09:24.749Z",
       "recordedBy": "deepseek-v4.1-flash",
       "entries": [
         "f2fbe4ced3d8ff0ea2222ecd652c62fc92a838432b81179a50a8077f683c4e6a.json"
@@ -16,11 +16,24 @@
       "ranWith": [
         "dashboard-conditions"
       ],
-      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
       "visitedPaths": [
         "/",
         "/compare"
       ],
+      "readOnly": true
+    },
+    "beaches-and-live-conditions": {
+      "flowId": "beaches-and-live-conditions",
+      "specDigest": "69742bdb0ea4a66971e0392dffc6dde1d227da099df6275c593fb57d7e802ee4",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T20:16:49.241Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "f610d2a25b5840a03d99f85b6ea82c77954fd0aaf717ae10a20ee0f692674905.json"
+      ],
+      "ranAfter": [],
+      "ranWith": [],
       "readOnly": true
     },
     "community-report": {
@@ -44,7 +57,7 @@
         "dashboard-conditions",
         "island-map"
       ],
-      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
       "visitedPaths": [
         "/",
         "/admin",
@@ -76,7 +89,7 @@
         "island-map",
         "persian-rtl-layout"
       ],
-      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
       "visitedPaths": [
         "/",
         "/reports"
@@ -87,7 +100,7 @@
       "flowId": "dashboard-conditions",
       "specDigest": "3a8e45de7cfcc9f2387a834a3f002db7526d15f88eef7fd71ab82eb6a43ef299",
       "status": "recorded",
-      "recordedAt": "2026-11-21T13:34:58.328Z",
+      "recordedAt": "2026-11-21T20:16:49.229Z",
       "recordedBy": "deepseek-v4.1-flash",
       "entries": [
         "ccf8b4313f08828cb5747e162ebf98343cfbd762bbf4bf8906fa7caa4d47918a.json",
@@ -96,9 +109,47 @@
       ],
       "ranAfter": [],
       "ranWith": [],
-      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "readOnly": true
+    },
+    "existing-pages-and-persian": {
+      "flowId": "existing-pages-and-persian",
+      "specDigest": "49161ef98b5fc54da6a6a3ea277583e38c55fd71e90b866fea6478ab70a843e2",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T17:09:24.779Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "00555a0c4ba28a4ab7839b7bbe394388da50ce6eb6cbbe1da9e9eebfe40fa7a0.json",
+        "b5fa379a430d09c4b58cab8301166e47ca4d254b6a5b5fb54664974f1dd86645.json"
+      ],
+      "ranAfter": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "hero-headline-text",
+        "home-conditions-and-navigation",
+        "homepage-beaches-and-conditions",
+        "island-map",
+        "island-map-four-beaches",
+        "persian-rtl-layout"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "hero-headline-text",
+        "home-conditions-and-navigation",
+        "homepage-beaches-and-conditions",
+        "island-map",
+        "island-map-four-beaches",
+        "persian-rtl-layout"
+      ],
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
       "visitedPaths": [
-        "/"
+        "/",
+        "/compare",
+        "/reports"
       ],
       "readOnly": true
     },
@@ -109,15 +160,35 @@
       "recordedAt": "2026-11-21T13:42:40.459Z",
       "recordedBy": "deepseek-v4.1-flash",
       "entries": [],
-      "ranAfter": [],
-      "ranWith": [],
+      "ranAfter": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "home-conditions-and-navigation",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "home-conditions-and-navigation",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
+      "visitedPaths": [
+        "/"
+      ],
       "readOnly": true
     },
     "home-conditions-and-navigation": {
       "flowId": "home-conditions-and-navigation",
       "specDigest": "18c4fbe442d6525d2001641adfd98e5a82dd7a1aefca16c599abf1635301c89d",
       "status": "recorded",
-      "recordedAt": "2026-11-21T13:34:58.340Z",
+      "recordedAt": "2026-11-21T20:16:49.232Z",
       "recordedBy": "deepseek-v4.1-flash",
       "entries": [
         "6058af64108814d6241949a8d1a735620bf46f34bc2f2e9d3b95f6e4afd8a372.json",
@@ -136,11 +207,38 @@
         "dashboard-conditions",
         "island-map"
       ],
-      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "readOnly": true
+    },
+    "homepage-beaches-and-conditions": {
+      "flowId": "homepage-beaches-and-conditions",
+      "specDigest": "d715aa8c8e56b6eab9712a64384eed227febe1fcad49254680bb62faaa8d890e",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T17:09:24.766Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [],
+      "ranAfter": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "hero-headline-text",
+        "home-conditions-and-navigation",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "hero-headline-text",
+        "home-conditions-and-navigation",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
       "visitedPaths": [
-        "/",
-        "/map",
-        "/compare"
+        "/"
       ],
       "readOnly": true
     },
@@ -148,7 +246,7 @@
       "flowId": "island-map",
       "specDigest": "d802b58950cedb93ce81e5be51c5e2fe77f782d619e8b886884f8e7402eed9bc",
       "status": "recorded",
-      "recordedAt": "2026-11-21T13:12:44.882Z",
+      "recordedAt": "2026-11-21T17:09:24.762Z",
       "recordedBy": "deepseek-v4.1-flash",
       "entries": [
         "1e4ec9418799a6b38e11b248194095c0ad317c8f921c3dfacdd5cb2e41389d88.json",
@@ -162,10 +260,87 @@
         "beach-comparison",
         "dashboard-conditions"
       ],
-      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
       "visitedPaths": [
         "/",
         "/map"
+      ],
+      "readOnly": true
+    },
+    "island-map-four-beaches": {
+      "flowId": "island-map-four-beaches",
+      "specDigest": "06d80c514cdf99aa3a33f1cbea531638112c4ebbd5537d84de9d9cbfbbeeb3b8",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T17:09:24.779Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "ca0cfa567624d67eed538b132f749ae2805185f15f0c682c8a1be0ca02dee7a3.json"
+      ],
+      "ranAfter": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "hero-headline-text",
+        "home-conditions-and-navigation",
+        "homepage-beaches-and-conditions",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "ranWith": [
+        "beach-comparison",
+        "community-report",
+        "community-reports-feed",
+        "dashboard-conditions",
+        "hero-headline-text",
+        "home-conditions-and-navigation",
+        "homepage-beaches-and-conditions",
+        "island-map",
+        "persian-rtl-layout"
+      ],
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
+      "visitedPaths": [
+        "/",
+        "/map"
+      ],
+      "readOnly": true
+    },
+    "map-beach-conditions": {
+      "flowId": "map-beach-conditions",
+      "specDigest": "77df412063031f34d2a0b59bd07c92a73cd0da5958b37adfa35e04610cbad261",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T20:16:49.242Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "ac171617544df5c0280cbe5f78f5c29b94ffca762b99b6ec3676bb72905cb9de.json",
+        "fa2f691534d113f2c38732f12f0b538e85fd66418977cc00acfabbee0f6c712d.json"
+      ],
+      "ranAfter": [
+        "beaches-and-live-conditions"
+      ],
+      "ranWith": [
+        "beaches-and-live-conditions"
+      ],
+      "readOnly": true
+    },
+    "other-pages-load": {
+      "flowId": "other-pages-load",
+      "specDigest": "d236f9958fd7f8af3ff6677169eca225a381dc8b2aed52f83361d57654d12c5b",
+      "status": "recorded",
+      "recordedAt": "2026-11-21T20:16:49.243Z",
+      "recordedBy": "deepseek-v4.1-flash",
+      "entries": [
+        "b09154f4f5d04622d0c9d72e91dde236b6281421eaae2603fe9e58b5deff16b0.json",
+        "c6c7022c3f16a47cdfb65a0e9b76b530322525b2a8873f4d876ec3048b749eb5.json",
+        "8366bea4555820e52a01ad0023c73c0efb640cd0ed5eb9ab8a7fd327737ced9c.json"
+      ],
+      "ranAfter": [
+        "beaches-and-live-conditions",
+        "map-beach-conditions"
+      ],
+      "ranWith": [
+        "beaches-and-live-conditions",
+        "map-beach-conditions"
       ],
       "readOnly": true
     },
@@ -192,7 +367,7 @@
         "home-conditions-and-navigation",
         "island-map"
       ],
-      "passedTree": "c7589974e02ec5b6b7a63cc1fda2a9c402cddc0c",
+      "passedTree": "752f44e291090b8f76c3ac7d3f70f357930458d6",
       "visitedPaths": [
         "/"
       ],

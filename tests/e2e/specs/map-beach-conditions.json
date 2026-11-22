@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "map-beach-conditions",
+    "kind": "interactive",
+    "goal": "Selecting a beach on the map shows that beach's current conditions",
+    "requirementIndexes": [
+      9,
+      10,
+      11
+    ],
+    "acceptanceCriteriaIndexes": [
+      2,
+      3
+    ],
+    "steps": [
+      "Open the map page",
+      "Select the Simorgh Beach marker"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Simorgh Beach"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Simorgh Beach"
+      }
+    ]
+  }
+}

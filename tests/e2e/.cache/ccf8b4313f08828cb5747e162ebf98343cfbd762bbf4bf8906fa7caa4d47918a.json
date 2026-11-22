@@ -1,6 +1,6 @@
 {
   "schemaVersion": "trace-1",
-  "createdAt": "2026-11-21T13:33:08.547Z",
+  "createdAt": "2026-11-21T20:14:50.048Z",
   "payload": {
     "actions": [
       {
@@ -28,42 +28,44 @@
       "provider": "caffeine-inference.chat",
       "model": "deepseek-v4.1-flash"
     },
-    "summary": "Tapped the Dashboard link; the dashboard is open at \"/\" showing the hero, current conditions, 24-hour forecast table, 7-day forecast, and side panels (swimming suitability, UV index, official warnings, sea safety note).",
+    "summary": "Tapped the Dashboard link; the dashboard is open at \"/\" showing the \"Let's Go Swim\" hero, current conditions (Caution, water temp 28.5°C, waves 0.7 m, wind 3 km/h), 24-hour and 7-day forecasts, and swimming suitability/UV/warnings panels.",
     "startPath": "/",
     "endPath": "/",
     "endAnchors": [
       {
-        "text": "Insufficient data"
+        "text": "Caution"
       },
       {
-        "text": "km/h"
+        "text": "Water temp"
+      },
+      {
+        "text": "28.5"
+      },
+      {
+        "text": "°C"
+      },
+      {
+        "text": "Wave height"
+      },
+      {
+        "text": "0.7"
+      },
+      {
+        "text": "m"
       },
       {
         "text": "W"
-      },
-      {
-        "text": "0.1"
-      },
-      {
-        "role": "heading",
-        "name": "Current conditions"
-      },
-      {
-        "text": "—"
-      },
-      {
-        "text": "Currents"
-      },
-      {
-        "text": "Air temp"
       }
     ],
     "goneAnchors": [
       {
+        "text": "No data"
+      },
+      {
         "text": "Loading conditions…"
       }
     ],
-    "endWaitMs": 10323,
+    "endWaitMs": 10330,
     "keyedBy": {
       "cacheSchema": "trace-1",
       "policyVersion": "conservative/6",

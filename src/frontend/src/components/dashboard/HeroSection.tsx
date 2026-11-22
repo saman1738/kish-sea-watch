@@ -4,7 +4,7 @@ import { BeachSwitcher } from "@/components/layout/BeachSwitcher";
 import { LastUpdated } from "@/components/layout/LastUpdated";
 import { type SuitabilityResult, gaugePosition } from "@/lib/conditions";
 import { useI18n } from "@/lib/i18n";
-import { type MarineSnapshot, compassLabel } from "@/lib/marine";
+import { type MarineSnapshot, compassLabel, formatClock } from "@/lib/marine";
 import { cn } from "@/lib/utils";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Waves, Wind } from "lucide-react";
@@ -16,6 +16,8 @@ interface HeroMetric {
   unit?: string;
   detail?: string | null;
   gauge?: number;
+  /** True when the reading comes from the marine provider. */
+  marine: boolean;
 }
 
 function fmt(
@@ -35,6 +37,7 @@ export function HeroSection({
   fetchedAt,
   onRefresh,
   isRefreshing,
+  showMetrics = true,
   className,
 }: {
   beaches: Beach[];
@@ -45,10 +48,14 @@ export function HeroSection({
   fetchedAt: string | null;
   onRefresh: () => void;
   isRefreshing: boolean;
+  /** Render the live metric strip; hidden until a beach's conditions resolve. */
+  showMetrics?: boolean;
   className?: string;
 }) {
   const { t, num, pick } = useI18n();
   const current = snapshot?.current ?? null;
+  const observedClock = formatClock(snapshot?.observedAt ?? current?.time);
+  const marineMissing = snapshot?.marineMissing ?? false;
 
   const metrics: HeroMetric[] = [
     {
@@ -57,6 +64,7 @@ export function HeroSection({
       value: fmt(current?.waterTemp ?? null, 1, num),
       unit: t("common.celsius"),
       gauge: gaugePosition(current?.waterTemp ?? null, 18, 34),
+      marine: true,
     },
     {
       key: "waveHeight",
@@ -65,6 +73,7 @@ export function HeroSection({
       unit: t("common.meters"),
       detail: compassLabel(current?.waveDirection ?? null),
       gauge: gaugePosition(current?.waveHeight ?? null, 0, 2.5),
+      marine: true,
     },
     {
       key: "windSpeed",
@@ -73,12 +82,14 @@ export function HeroSection({
       unit: t("common.kmh"),
       detail: compassLabel(current?.windDirection ?? null),
       gauge: gaugePosition(current?.windSpeed ?? null, 0, 50),
+      marine: false,
     },
     {
       key: "uvIndex",
       label: t("metric.uvIndex"),
       value: fmt(current?.uvIndex ?? null, 1, num),
       gauge: gaugePosition(current?.uvIndex ?? null, 0, 12),
+      marine: false,
     },
   ];
 
@@ -164,64 +175,88 @@ export function HeroSection({
 
         <div className="rounded-2xl border border-border/50 bg-background/45 p-3 backdrop-blur-md sm:p-4">
           <p className="label-caps text-primary">{t("hero.conditionsLabel")}</p>
-          <dl className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
-            {metrics.map((metric) => {
-              const missing = metric.value === null;
-              return (
-                <div
-                  key={metric.key}
-                  data-ocid={`dashboard.hero_metric.${metric.key}`}
-                  className="relative flex min-w-0 flex-col gap-1 overflow-hidden rounded-xl border border-border/50 bg-card/60 px-3 py-2.5"
-                >
-                  <dt className="truncate text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                    {metric.label}
-                  </dt>
-                  <dd className="flex min-w-0 items-baseline gap-1">
+          {showMetrics ? (
+            <dl className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {metrics.map((metric) => {
+                const missing = metric.value === null;
+                const unavailable = missing && metric.marine && marineMissing;
+                return (
+                  <div
+                    key={metric.key}
+                    data-ocid={`dashboard.hero_metric.${metric.key}`}
+                    className="relative flex min-w-0 flex-col gap-1 overflow-hidden rounded-xl border border-border/50 bg-card/60 px-3 py-2.5"
+                  >
+                    <dt className="truncate text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                      {metric.label}
+                    </dt>
+                    <dd className="flex min-w-0 items-baseline gap-1">
+                      <span
+                        className={cn(
+                          "numeric font-display text-2xl font-extrabold leading-none tracking-tight",
+                          missing
+                            ? "text-sm font-medium text-muted-foreground"
+                            : "text-foreground",
+                        )}
+                      >
+                        {metric.value ?? t("common.noData")}
+                      </span>
+                      {!missing && metric.unit ? (
+                        <span className="text-xs font-semibold text-muted-foreground">
+                          {metric.unit}
+                        </span>
+                      ) : null}
+                      {metric.detail ? (
+                        <span className="ms-1 inline-flex items-center gap-0.5 text-[0.65rem] font-bold uppercase text-accent">
+                          {metric.key === "windSpeed" ? (
+                            <Wind className="size-3" aria-hidden="true" />
+                          ) : metric.key === "waveHeight" ? (
+                            <Waves className="size-3" aria-hidden="true" />
+                          ) : null}
+                          {metric.detail}
+                        </span>
+                      ) : null}
+                    </dd>
+                    {typeof metric.gauge === "number" ? (
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 block h-0.5 w-full overflow-hidden rounded-full bg-border/70"
+                      >
+                        <span
+                          className="block h-0.5 rounded-full bg-gradient-primary shadow-neon"
+                          style={{
+                            width: `${Math.round(
+                              Math.min(1, Math.max(0, metric.gauge)) * 100,
+                            )}%`,
+                          }}
+                        />
+                      </span>
+                    ) : null}
                     <span
                       className={cn(
-                        "numeric font-display text-2xl font-extrabold leading-none tracking-tight",
-                        missing
-                          ? "text-sm font-medium text-muted-foreground"
-                          : "text-foreground",
+                        "mt-0.5 truncate text-[0.58rem] uppercase tracking-[0.08em]",
+                        unavailable
+                          ? "text-destructive/90"
+                          : "text-foreground/55",
                       )}
                     >
-                      {metric.value ?? t("common.noData")}
+                      {unavailable
+                        ? t("map.conditionsUnavailable")
+                        : missing
+                          ? t("common.noData")
+                          : `${metric.marine ? t("common.observedAt") : t("common.forecastAt")} ${observedClock ?? t("common.noData")}`}
                     </span>
-                    {!missing && metric.unit ? (
-                      <span className="text-xs font-semibold text-muted-foreground">
-                        {metric.unit}
-                      </span>
-                    ) : null}
-                    {metric.detail ? (
-                      <span className="ms-1 inline-flex items-center gap-0.5 text-[0.65rem] font-bold uppercase text-accent">
-                        {metric.key === "windSpeed" ? (
-                          <Wind className="size-3" aria-hidden="true" />
-                        ) : metric.key === "waveHeight" ? (
-                          <Waves className="size-3" aria-hidden="true" />
-                        ) : null}
-                        {metric.detail}
-                      </span>
-                    ) : null}
-                  </dd>
-                  {typeof metric.gauge === "number" ? (
-                    <span
-                      aria-hidden="true"
-                      className="mt-1 block h-0.5 w-full overflow-hidden rounded-full bg-border/70"
-                    >
-                      <span
-                        className="block h-0.5 rounded-full bg-gradient-primary shadow-neon"
-                        style={{
-                          width: `${Math.round(
-                            Math.min(1, Math.max(0, metric.gauge)) * 100,
-                          )}%`,
-                        }}
-                      />
-                    </span>
-                  ) : null}
-                </div>
-              );
-            })}
-          </dl>
+                  </div>
+                );
+              })}
+            </dl>
+          ) : (
+            <p
+              data-ocid="dashboard.hero_metrics_pending"
+              className="mt-3 rounded-xl border border-border/50 bg-card/60 px-3 py-3 text-sm text-muted-foreground"
+            >
+              {t("common.loading")}
+            </p>
+          )}
           <p className="mt-2 text-[0.62rem] uppercase tracking-[0.08em] text-foreground/60">
             {t("common.forecast")} · {t("common.timezone")}
           </p>

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T17:09:24.677Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Reports\"",
+        "target": {
+          "role": "link",
+          "name": "Reports"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "existing-pages-and-persian.e2e.ts::existing-pages-and-persian",
+      "targetId": "web",
+      "instructionDigest": "9d407b41732a35de7a7d6bc5b592fc17061480c4f06e7da13607d00ef079a44a",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the Reports nav link; the app navigated to /reports showing the \"Community reports\" page with a report feed (0 reports, \"No community reports yet.\"), beach filter buttons, and a \"Submit a report\" form.",
+    "startPath": "/compare",
+    "endPath": "/reports",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Community reports"
+      },
+      {
+        "text": "Unverified observations submitted by beachgoers."
+      },
+      {
+        "role": "heading",
+        "name": "Report feed"
+      },
+      {
+        "role": "button",
+        "name": "All beaches",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "role": "button",
+        "name": "Marjan Beach"
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "role": "button",
+        "name": "Mir Mahna Coastal Park"
+      },
+      {
+        "role": "button",
+        "name": "Fisherman Beach Park"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "heading",
+        "name": "Beach comparison"
+      },
+      {
+        "text": "Ranked by activity using the same live forecast for every beach."
+      },
+      {
+        "text": "Updated"
+      },
+      {
+        "text": "· Asia/Tehran"
+      },
+      {
+        "text": "Refresh"
+      },
+      {
+        "text": "Forecast estimate."
+      },
+      {
+        "role": "heading",
+        "name": "Best beach per activity"
+      },
+      {
+        "text": "Swimming"
+      }
+    ],
+    "endWaitMs": 11440,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

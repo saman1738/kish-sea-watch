@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "spec": {
+    "id": "beaches-and-live-conditions",
+    "kind": "interactive",
+    "goal": "The homepage lists the seeded beaches and shows live sea and weather readings for the first beach",
+    "requirementIndexes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "acceptanceCriteriaIndexes": [
+      0,
+      1,
+      5
+    ],
+    "steps": [
+      "Open the homepage",
+      "Open the map page"
+    ],
+    "checks": [
+      {
+        "afterStep": 0,
+        "expectText": "Marjan Beach"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Water temperature"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Wave height"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "Wind speed"
+      },
+      {
+        "afterStep": 0,
+        "expectText": "UV index"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Simorgh Beach"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Mir Mahna Coastal Park"
+      },
+      {
+        "afterStep": 1,
+        "expectText": "Fisherman Beach Park"
+      },
+      {
+        "afterStep": 1,
+        "expectNoText": "No beaches with coordinates are available."
+      }
+    ]
+  }
+}

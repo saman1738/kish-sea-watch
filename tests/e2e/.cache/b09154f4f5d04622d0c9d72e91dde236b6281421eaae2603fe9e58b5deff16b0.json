@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T20:16:49.149Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap link \"Compare\"",
+        "target": {
+          "role": "link",
+          "name": "Compare"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "other-pages-load.e2e.ts::other-pages-load",
+      "targetId": "web",
+      "instructionDigest": "578ef4182ec40ebe547c2028a7c3e5bc2f3a82c996e56c80f3668545231f69e0",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the Compare link in the nav; the app navigated to /compare and shows the \"Beach comparison\" page with best-beach-per-activity list and activity comparison cards for Marjan, Simorgh, Mir Mahna and Fisherman Beach.",
+    "startPath": "/",
+    "endPath": "/compare",
+    "endAnchors": [
+      {
+        "role": "heading",
+        "name": "Beach comparison"
+      },
+      {
+        "text": "Ranked by activity using the same live forecast for every beach."
+      },
+      {
+        "text": "Updated"
+      },
+      {
+        "text": "· Asia/Tehran"
+      },
+      {
+        "text": "Refresh"
+      },
+      {
+        "text": "Forecast estimate."
+      },
+      {
+        "role": "heading",
+        "name": "Best beach per activity"
+      },
+      {
+        "text": "Swimming"
+      }
+    ],
+    "endWaitMs": 11343,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

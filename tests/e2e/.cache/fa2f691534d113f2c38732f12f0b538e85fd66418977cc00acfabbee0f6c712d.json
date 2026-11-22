@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "trace-1",
+  "createdAt": "2026-11-21T20:16:41.816Z",
+  "payload": {
+    "actions": [
+      {
+        "name": "tap",
+        "summary": "tap button \"Simorgh Beach\"",
+        "target": {
+          "role": "button",
+          "name": "Simorgh Beach"
+        }
+      }
+    ],
+    "executor": {
+      "name": "e2e-default-agent",
+      "version": "2"
+    },
+    "recordedFor": {
+      "testId": "map-beach-conditions.e2e.ts::map-beach-conditions",
+      "targetId": "web",
+      "instructionDigest": "5a8f25e1e7c9b7366053013f82ef25939d2fc11aa75d38bcb67645366c76d5a2",
+      "paramsDigest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "callIndex": 0,
+      "agent": "default"
+    },
+    "recordedBy": {
+      "provider": "caffeine-inference.chat",
+      "model": "deepseek-v4.1-flash"
+    },
+    "summary": "Tapped the Simorgh Beach marker on the map; a detail panel opened showing \"Simorgh Beach\", 26.5333° · 54.0200°, status Caution, water temp 28.5 °C, wave height 0.7 m, wind 3 km/h NE, UV 0.0, plus a \"View beach\" link.",
+    "startPath": "/map",
+    "endPath": "/map",
+    "endAnchors": [
+      {
+        "role": "button",
+        "name": "Simorgh Beach",
+        "states": [
+          "pressed"
+        ]
+      },
+      {
+        "text": "Beach"
+      },
+      {
+        "role": "heading",
+        "name": "Simorgh Beach"
+      },
+      {
+        "text": "26.5333° · 54.0200°"
+      },
+      {
+        "role": "button",
+        "name": "Close"
+      },
+      {
+        "text": "Water temp"
+      },
+      {
+        "text": "28.5"
+      },
+      {
+        "text": "°C"
+      }
+    ],
+    "goneAnchors": [
+      {
+        "role": "button",
+        "name": "Simorgh Beach"
+      },
+      {
+        "text": "Open beach details"
+      },
+      {
+        "text": "Tap a glowing marker to inspect that beach."
+      },
+      {
+        "role": "button",
+        "name": "Simorgh Beach 26.533°, 54.020°"
+      }
+    ],
+    "endWaitMs": 11155,
+    "keyedBy": {
+      "cacheSchema": "trace-1",
+      "policyVersion": "conservative/6",
+      "project": "403fcccf39e2650a7e389bda5a9246bfe8c725769a98b3a749be67a096c16423",
+      "platform": "web",
+      "engineName": "web",
+      "engineSpiVersion": 1,
+      "appIdentity": "aec5acc8a8d7ba14d388c35095196d67ae7ad7199ff1168a3230addcf190cf8d",
+      "agentContextDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

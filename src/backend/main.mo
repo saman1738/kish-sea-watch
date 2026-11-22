@@ -13,6 +13,7 @@ import BoolValue "mo:caffeineai-oql/BoolValue";
 import BeachTypes "types/beaches";
 import ReportTypes "types/reports";
 import WarningTypes "types/warnings";
+import Seed "beaches";
 import BeachesApi "mixins/beaches-api";
 import ReportsApi "mixins/reports-api";
 import WarningsApi "mixins/warnings-api";
@@ -30,6 +31,11 @@ actor {
 
   let warnings : Map.Map<WarningTypes.WarningId, WarningTypes.Warning>;
   let nextWarningId : { var value : Nat };
+
+  // Fresh installs start from an empty actor, so the migration chain never runs
+  // and the predefined beaches must be seeded here. Idempotent: only seeds when
+  // the beach store is empty, so admin edits and added beaches are preserved.
+  Seed.ensureSeeded(beaches, nextBeachId);
 
   include BeachesApi(accessControlState, beaches, nextBeachId);
   include ReportsApi(accessControlState, reports, nextReportId);

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { AlertCircle, RefreshCw } from "lucide-react";
+import { AlertCircle, RefreshCw, ServerCrash } from "lucide-react";
 
 export function ConditionsError({
   onRetry,
@@ -33,6 +33,53 @@ export function ConditionsError({
         type="button"
         variant="outline"
         data-ocid="conditions.retry_button"
+        onClick={onRetry}
+        disabled={isRetrying}
+        className="rounded-full border-destructive/50 bg-transparent text-destructive hover:bg-destructive/15 hover:text-destructive"
+      >
+        <RefreshCw
+          className={cn("size-4", isRetrying && "animate-spin")}
+          aria-hidden="true"
+        />
+        {t("common.retry")}
+      </Button>
+    </div>
+  );
+}
+
+/** Shown when the backend canister itself cannot be reached. */
+export function BackendError({
+  onRetry,
+  isRetrying,
+  className,
+}: {
+  onRetry: () => void;
+  isRetrying?: boolean;
+  className?: string;
+}) {
+  const { t } = useI18n();
+  return (
+    <div
+      data-ocid="backend.error_state"
+      role="alert"
+      className={cn(
+        "flex flex-col items-start gap-3 rounded-2xl border border-destructive/40 bg-destructive/10 p-5 backdrop-blur",
+        className,
+      )}
+    >
+      <div className="flex items-center gap-2 text-destructive">
+        <ServerCrash className="size-5" aria-hidden="true" />
+        <h2 className="font-display text-base font-bold uppercase tracking-wide">
+          {t("common.backendErrorTitle")}
+        </h2>
+      </div>
+      <p className="text-sm text-muted-foreground">
+        {t("common.backendErrorBody")}
+      </p>
+      <Button
+        type="button"
+        variant="outline"
+        data-ocid="backend.retry_button"
         onClick={onRetry}
         disabled={isRetrying}
         className="rounded-full border-destructive/50 bg-transparent text-destructive hover:bg-destructive/15 hover:text-destructive"
