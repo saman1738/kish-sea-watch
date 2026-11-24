@@ -511,7 +511,7 @@ const fa: Record<TranslationKey, string> = {
   "footer.timezone": "همه زمان‌ها به وقت آسیا/تهران",
   "status.legend": "راهنمای وضعیت",
   "status.live": "زنده",
-  "hero.headline": "جزر و مد نئونی، عددهای واقعی",
+  "hero.headline": "جلال مهشری کردن",
   "hero.subline":
     "دمای آب، موج، باد و UV به‌صورت زنده برای هر ساحل پایش‌شده کیش — پیش از ورود به آب دریا را بخوانید.",
   "hero.cta": "مشاهده نقشه",
